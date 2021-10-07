@@ -1,0 +1,29 @@
+{
+  "name": "philipleth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "philipleth",
+  "author": "Shahrukh khan",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.14.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-manifest": "^3.14.0",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "react": "^17.0.2",
+    "react-accessible-accordion": "^4.0.0",
+    "react-bootstrap": "^1.6.4",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {}
+}
