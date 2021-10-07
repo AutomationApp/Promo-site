@@ -1,6 +1,7 @@
 import React from "react";
 import Faqs from "../common/faqs";
 import Pricing from "../common/pricing";
+import CurveShape from "../../components/common/curve-shape";
 
 const PricingSection = () => {
   return (
@@ -41,45 +42,13 @@ const PricingSection = () => {
                 All types of businesses need access to development resources, so
                 we give you the option to decide how much you need to use.
               </p>
-
-              <form className="d-flex align-items-center justify-content-center mb-7 mb-md-9">
-                <span className="text-white-80">Annual</span>
-
-                <div className="custom-control custom-switch custom-switch-dark mx-3">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="billingSwitch"
-                    data-toggle="price"
-                    data-target=".price"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="billingSwitch"
-                  ></label>
-                </div>
-
-                <span className="text-white-80">Monthly</span>
-              </form>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="position-relative">
-        <div className="shape shape-bottom shape-fluid-x svg-shim text-light">
-          <svg
-            viewBox="0 0 2880 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
-      </div>
+      <CurveShape />
+
       <Pricing />
 
       <section className="py-8 py-md-11">
@@ -203,21 +172,6 @@ const PricingSection = () => {
           </div>
         </div>
       </section>
-
-      <div className="position-relative">
-        <div className="shape shape-bottom shape-fluid-x svg-shim text-white">
-          <svg
-            viewBox="0 0 2880 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
-      </div>
 
       <Faqs />
     </>

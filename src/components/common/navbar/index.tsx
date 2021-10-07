@@ -36,7 +36,7 @@ const NavMenu = () => {
           data-toggle="collapse"
           data-target="#navbarCollapse"
           aria-controls="navbarCollapse"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-label="Toggle navigation"
           onClick={() => setNavbarMenu(true)}
         >
@@ -53,7 +53,7 @@ const NavMenu = () => {
             data-toggle="collapse"
             data-target="#navbarCollapse"
             aria-controls="navbarCollapse"
-            aria-expanded="false"
+            aria-expanded="true"
             aria-label="Toggle navigation"
             onClick={() => setNavbarMenu(false)}
           >
@@ -231,28 +231,34 @@ const NavMenu = () => {
                 Pricing
               </Link>
             </li>
+
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" to="/contact">
                 Contact
               </Link>
             </li>
+            <li className="nav-item dropdown">
+              <Link to="/blogs" className="nav-link dropdown-toggle">
+                Blogs
+              </Link>
+            </li>
           </ul>
 
           <div className="ml-auto flex">
-            <a
+            <Link
+              to="https://automation.app/app/login"
               className="navbar-btn btn btn-sm btn-outline-primary lift mr-2"
-              href="https://themes.getbootstrap.com/product/landkit/"
               target="_blank"
             >
               Sign in
-            </a>
-            <a
+            </Link>
+            <Link
+              to="https://automation.app/app/register"
               className="navbar-btn btn btn-sm btn-primary lift"
-              href="https://themes.getbootstrap.com/product/landkit/"
               target="_blank"
             >
               Get started
-            </a>
+            </Link>
           </div>
         </div>
       </div>

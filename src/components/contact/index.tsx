@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "../../assets/img/covers/cover-5.jpg";
+import CurveShape from "../common/curve-shape";
 import TalkSection from "../common/talk-section";
 
 const ContactSection = () => {
@@ -24,20 +25,8 @@ const ContactSection = () => {
           </div>
         </div>
       </section>
-      <div className="position-relative">
-        <div className="shape shape-bottom shape-fluid-x svg-shim text-light">
-          <svg
-            viewBox="0 0 2880 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
-      </div>
+
+      <CurveShape />
 
       <section className="py-7 py-md-9 border-bottom border-gray-300" id="info">
         <div className="container">
