@@ -1,8 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TalkSection = (e) => {
+  const [loading, setLoading] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+    const data = new FormData();
+    data.append("fullname", name);
+    data.append("email", email);
+    data.append("message", message);
+    const url =
+      "https://wordpress-638795-2187391.cloudwaysapps.com/wp-json/contact-form-7/v1/contact-forms/27/feedback";
+
+    axios
+      .post(url, data)
+      .then(({ data }: any) => {
+        console.log(data);
+        if (data.status === "mail_sent") {
+          toast.success("Success!");
+        } else {
+          toast.error("failed!");
+        }
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -21,58 +54,85 @@ const TalkSection = (e) => {
         <div className="row justify-content-center">
           <div className="col-12 col-md-12 col-lg-10">
             <form onSubmit={handleSubmit}>
-              <div className="row">
-                <div className="col-12 col-md-6">
-                  <div className="form-group mb-5">
-                    <label htmlFor="contactName">Full name</label>
-
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="contactName"
-                      placeholder="Full name"
-                    />
+              {loading ? (
+                <div className="row h-100 justify-content-center align-items-center">
+                  <div className="spinner-grow" role="status">
+                    <span className="sr-only">Loading...</span>
                   </div>
                 </div>
-                <div className="col-12 col-md-6">
-                  <div className="form-group mb-5">
-                    <label htmlFor="contactEmail">Email</label>
+              ) : (
+                <>
+                  <div className="row">
+                    <div className="col-12 col-md-6">
+                      <div className="form-group mb-5">
+                        <label htmlFor="contactName">Full name</label>
 
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="contactEmail"
-                      placeholder="hello@domain.com"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-12">
-                  <div className="form-group mb-7 mb-md-9">
-                    <label htmlFor="contactMessage">
-                      What can we help you with?
-                    </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="contactName"
+                          placeholder="Full name"
+                          onChange={(e) => setName(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <div className="form-group mb-5">
+                        <label htmlFor="contactEmail">Email</label>
 
-                    <textarea
-                      className="form-control"
-                      id="contactMessage"
-                      placeholder="Tell us what we can help you with!"
-                    ></textarea>
+                        <input
+                          type="email"
+                          className="form-control"
+                          id="contactEmail"
+                          placeholder="hello@domain.com"
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="row justify-content-center">
-                <div className="col-auto">
-                  <button type="submit" className="btn btn-primary lift">
-                    Send message
-                  </button>
-                </div>
-              </div>
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="form-group mb-7 mb-md-9">
+                        <label htmlFor="contactMessage">
+                          What can we help you with?
+                        </label>
+
+                        <textarea
+                          className="form-control"
+                          id="contactMessage"
+                          placeholder="Tell us what we can help you with!"
+                          onChange={(e) => setMessage(e.target.value)}
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row justify-content-center">
+                    <div className="col-auto">
+                      <button type="submit" className="btn btn-primary lift">
+                        Send message
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };

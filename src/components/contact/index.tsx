@@ -46,9 +46,7 @@ const ContactSection = () => {
               <h6 className="text-uppercase text-gray-700 mb-1">Message us</h6>
 
               <div className="mb-5 mb-md-0">
-                <a href="#!" className="h4 text-primary">
-                  Start a chat!
-                </a>
+                <span className="h4 text-primary">Start a chat!</span>
               </div>
             </div>
             <div className="col-12 col-md-4 text-center border-right border-gray-300">
@@ -58,7 +56,7 @@ const ContactSection = () => {
 
               <div className="mb-5 mb-md-0">
                 <a href="#!" className="h4">
-                  (555) 123-4567
+                  +45 2363 2303
                 </a>
               </div>
             </div>
@@ -66,7 +64,7 @@ const ContactSection = () => {
               <h6 className="text-uppercase text-gray-700 mb-1">Email us</h6>
 
               <a href="#!" className="h4">
-                support@goodthemes.co
+                nerds@automation.app
               </a>
             </div>
           </div>
