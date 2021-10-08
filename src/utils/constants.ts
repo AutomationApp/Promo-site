@@ -13,6 +13,10 @@ import crm2 from "../assets/img/product-tour/crm2.png"
 import crm3 from "../assets/img/product-tour/crm3.png"
 import crm4 from "../assets/img/product-tour/crm4.png"
 
+import Img1 from "../assets/img/illustrations/illustration-4.png";
+import Img2 from "../assets/img/illustrations/illustration-8.png";
+import Img3 from "../assets/img/illustrations/illustration-7.png";
+
 export const FaqsRowData = [
     {
         id: 1,
@@ -171,4 +175,54 @@ export const StepsData = [
     },
 
 
+]
+
+
+export const AutomationData = [
+    {
+        id: 1,
+        image: Img1,
+        title: "Automation & Processes",
+        content: "E-commerce Business Process Automation"
+    },
+    {
+        id: 2,
+        image: Img2,
+        title: "Marketing & Communication",
+        content: "Omnichannel Ecommerce Marketing"
+    },
+    {
+        id: 3,
+        image: Img3,
+        title: "Sales & CLV",
+        content: "E-commerce Customer Lifecycle Management"
+    },
+]
+
+
+export const DropdownData = [
+    {
+        id: 1,
+        title: "Automations",
+        subtitle: "Automate your business",
+        path: "/product-tour"
+    },
+    {
+        id: 2,
+        title: "Custom Overviews",
+        subtitle: "Process orders - your way",
+        path: "/product-tour"
+    },
+    {
+        id: 3,
+        title: "Customer CRM",
+        subtitle: "Understand customers",
+        path: "/product-tour"
+    },
+    {
+        id: 4,
+        title: "9 more reasons",
+        subtitle: "why you'll love Automation.app",
+        path: "/product-tour"
+    },
 ]

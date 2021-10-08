@@ -1,6 +1,10 @@
 import React from "react";
 
-const TalkSection = () => {
+const TalkSection = (e) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="pt-8 pt-md-11 pb-8 pb-md-14">
       <div className="container">
@@ -16,7 +20,7 @@ const TalkSection = () => {
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-md-12 col-lg-10">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-12 col-md-6">
                   <div className="form-group mb-5">

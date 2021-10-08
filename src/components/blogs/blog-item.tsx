@@ -33,7 +33,6 @@ const BlogItem = ({ blog }) => {
         </Link>
 
         <a className="card-body" href="#!">
-          {/* <h3>Landkit is Moving to an Office In Austin, TX</h3> */}
           <h3
             dangerouslySetInnerHTML={{
               __html: blog.title.rendered,
@@ -53,13 +52,15 @@ const BlogItem = ({ blog }) => {
 
           <div className="avatar avatar-sm mr-2">
             <img
-              src={Person1}
+              src={blog.author.author_avatar}
               alt="..."
               className="avatar-img rounded-circle"
             />
           </div>
 
-          <h6 className="text-uppercase text-muted mr-2 mb-0">Ab Hadley</h6>
+          <h6 className="text-uppercase text-muted mr-2 mb-0">
+            {blog.author.author_name}
+          </h6>
 
           <p className="h6 text-uppercase text-muted mb-0 ml-auto">
             <time dateTime="2019-05-02">

@@ -20,7 +20,7 @@ const Steps = ({ step }) => {
           </div>
         </div>
         <div className="col col-md-12 ml-n5 ml-md-0">
-          <h3>{step.title}</h3>
+          <h3>{step.heading}</h3>
 
           <p className="text-muted mb-6 mb-md-0">{step.content}</p>
         </div>

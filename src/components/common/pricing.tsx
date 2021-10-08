@@ -10,7 +10,7 @@ const Pricing = () => {
               <div className="card-body">
                 <div className="text-center mb-3">
                   <span className="badge badge-pill badge-primary-soft">
-                    <span className="h6 text-uppercase">Basic</span>
+                    <span className="h6 text-uppercase">STARTER</span>
                   </span>
                 </div>
 
@@ -21,30 +21,23 @@ const Pricing = () => {
                     data-annual="0"
                     data-monthly="0"
                   >
-                    0
+                    9
                   </span>
                   <span className="h2 align-self-end mb-1">/mo</span>
                 </div>
 
-                <p className="text-center text-muted mb-5">per seat</p>
+                <p className="text-center text-muted mb-5">per month</p>
 
                 <div className="d-flex">
                   <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
                     <i className="fe fe-check"></i>
                   </div>
 
-                  <p>Rich landing pages</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p className="mb-5">100+ components</p>
+                  <p>250 monthly automation activities</p>
                 </div>
 
                 <a href="#!" className="btn btn-block btn-primary-soft">
-                  Start for free <i className="fe fe-arrow-right ml-3"></i>
+                  Try free <i className="fe fe-arrow-right ml-3"></i>
                 </a>
               </div>
             </div>
@@ -54,7 +47,7 @@ const Pricing = () => {
               <div className="card-body">
                 <div className="text-center mb-3">
                   <span className="badge badge-pill badge-primary-soft">
-                    <span className="h6 text-uppercase">Standard</span>
+                    <span className="h6 text-uppercase">GROWTH</span>
                   </span>
                 </div>
 
@@ -70,46 +63,18 @@ const Pricing = () => {
                   <span className="h2 align-self-end mb-1">/mo</span>
                 </div>
 
-                <p className="text-center text-muted mb-5">per seat</p>
+                <p className="text-center text-muted mb-5">per month</p>
 
                 <div className="d-flex">
                   <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
                     <i className="fe fe-check"></i>
                   </div>
 
-                  <p>Rich landing pages</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>100+ components</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>Flexible licensing</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>Speedy build tooling</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p className="mb-5">6 months free support</p>
+                  <p>1000 monthly automation activities</p>
                 </div>
 
                 <a href="#!" className="btn btn-block btn-primary">
-                  Start with Standard <i className="fe fe-arrow-right ml-3"></i>
+                  Try free <i className="fe fe-arrow-right ml-3"></i>
                 </a>
               </div>
             </div>
@@ -119,7 +84,7 @@ const Pricing = () => {
               <div className="card-body">
                 <div className="text-center mb-3">
                   <span className="badge badge-pill badge-primary-soft">
-                    <span className="h6 text-uppercase">Premium</span>
+                    <span className="h6 text-uppercase">PREMIUM</span>
                   </span>
                 </div>
 
@@ -130,72 +95,23 @@ const Pricing = () => {
                     data-annual="49"
                     data-monthly="69"
                   >
-                    49
+                    69
                   </span>
                   <span className="h2 align-self-end mb-1">/mo</span>
                 </div>
 
-                <p className="text-center text-muted mb-5">per seat</p>
+                <p className="text-center text-muted mb-5">per month</p>
 
                 <div className="d-flex">
                   <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
                     <i className="fe fe-check"></i>
                   </div>
 
-                  <p>Rich landing pages</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>100+ components</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>Flexible licensing</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>Speedy build tooling</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>6 months free support</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>256-bit encryption</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p>Guaranteed 100% uptime</p>
-                </div>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
-                  </div>
-
-                  <p className="mb-5">Unlimited users</p>
+                  <p>10000 monthly automation activities</p>
                 </div>
 
                 <a href="#!" className="btn btn-block btn-primary-soft">
-                  Start with Premium <i className="fe fe-arrow-right ml-3"></i>
+                  Try free <i className="fe fe-arrow-right ml-3"></i>
                 </a>
               </div>
             </div>

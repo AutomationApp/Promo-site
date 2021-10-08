@@ -19,65 +19,73 @@ const Faqs = () => {
         </div>
         <div className="row">
           <div className="col-12 col-md-6">
-            <h3>Can I use Landkit for my clients?</h3>
+            <h3>What does free month trial mean?</h3>
 
             <p className="text-gray-800 mb-6 mb-md-8">
-              Absolutely. The Bootstrap Themes license allows you to build a
-              websites for personal use or for a client. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Donec in nibh nec erat
-              tincidunt porta. Donec ac mauris ullamcorper quam ullamcorper
-              cursus eu in dui. Aliquam cursus accumsan laoreet.
+              It's free to set up Automation.app, you only pay when you activate
+              the account. You can try everything for free the first month with
+              free credits
             </p>
 
-            <h3>Is there a money back guarantee?</h3>
+            <h3>Where do I sign up?</h3>
 
             <p className="text-gray-800 mb-6 mb-md-8">
-              Yup! Bootstrap Themes come with a satisfaction guarantee. Submit a
-              return and get your money back. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Donec in nibh nec erat tincidunt
-              porta. Donec ac mauris ullamcorper quam ullamcorper cursus eu in
-              dui. Aliquam cursus accumsan laoreet.
+              Just "get started now" - as soon as you sign up your organisation,
+              you'll automatically be added to the list of our first movers and
+              benefits will be added to your account.
             </p>
 
-            <h3>Do I get free updates?</h3>
+            <h3>Do I benefit from being a first mover?</h3>
 
             <p className="text-gray-800 mb-6 mb-md-0">
-              Yes. We update all of our themes with each Bootstrap update, plus
-              are constantly adding new components, pages, and features to our
-              themes. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Donec in nibh nec erat tincidunt porta. Donec ac mauris
-              ullamcorper.
+              Free credits. You collect points which you can use towards
+              automations once payment is required. In addition you gain extra
+              support.
+            </p>
+
+            <h3 className="mt-8">
+              What is the next feature you're working on?
+            </h3>
+
+            <p className="text-gray-800 mb-6 mb-md-0">
+              We work in fast paced sprints. Most features are in develoment for
+              2-5 days before you can see them. Therefore most likely our next
+              feature is what you'll need - if you let us know:
+              nerds@automation.app
             </p>
           </div>
           <div className="col-12 col-md-6">
-            <h3>Does it work with Rails? React? Laravel?</h3>
+            <h3>What is the price?</h3>
 
             <p className="text-gray-800 mb-6 mb-md-8">
-              Yes. Landkit has basic CSS/JS files you can include. If you want
-              to enable deeper customization, you can integrate it into your
-              assets pipeline or build processes. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Donec in nibh nec erat tincidunt
-              porta. Donec ac mauris ullamcorper.
+              Basically the account is free. But of course with limited usage.
+              We strive to build a software that will pay itself back a hundred
+              times for every process automated.
             </p>
 
-            <h3>Can I use Landkit for my clients?</h3>
+            <h3>What if I use too many automations for the plan?</h3>
 
             <p className="text-gray-800 mb-6 mb-md-8">
-              Absolutely. The Bootstrap Themes license allows you to build a
-              websites for personal use or for a client. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Donec in nibh nec erat
-              tincidunt porta. Donec ac mauris ullamcorper quam ullamcorper
-              cursus eu in dui. Aliquam cursus accumsan laoreet.
+              We will never charge you for more that the plan you are on. But we
+              will let you know if it's time to upgrade.
             </p>
 
-            <h3>Is there a money back guarantee?</h3>
+            <h3>Who are the people behind?</h3>
 
             <p className="text-gray-800 mb-0">
-              Yup! Bootstrap Themes come with a satisfaction guarantee. Submit a
-              return and get your money back. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Donec in nibh nec erat tincidunt
-              porta. Donec ac mauris ullamcorper quam ullamcorper cursus eu in
-              dui. Aliquam cursus accumsan laoreet.
+              A development group with experience in improving revenue for
+              E-commerce. An architect for e-commerce, a full stack dev with
+              lots of e-commerce experience and a digital consultant. We're
+              three founding partners.
+            </p>
+            <h3 className="mt-8">
+              I don't think I can do this on my own - I'm not very technical?
+            </h3>
+
+            <p className="text-gray-800 mb-6 mb-md-0">
+              Need help with the setup og automation.app integration? Invite
+              "us" as admin in WordPress: nerds@automation.app. Please choose a
+              strong password and make sure you've signed up first.
             </p>
           </div>
         </div>
