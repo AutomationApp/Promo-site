@@ -21,7 +21,7 @@ const HomeSection = () => {
             data-aos="fade-up"
           >
             <h1 className="display-3 text-center text-md-left">
-              Simple <span className="text-primary">E-commerce</span>.
+              Simple <span className="text-primary">E-commerce</span>
               <br />
               Automation
             </h1>

@@ -8,6 +8,19 @@ import LoadingSpinner from "../common/loading-spinner";
 const BlogsSection = () => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
+  const [allBlogs, setAllBlogs] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+
+  const onSearch = () => {
+    const res = allBlogs.filter((proj) =>
+      Object.values(proj)
+        .join(" ")
+        .toLocaleLowerCase()
+        .includes(searchValue.toLocaleLowerCase())
+    );
+
+    setBlogs(res);
+  };
 
   useEffect(() => {
     const url =
@@ -15,6 +28,7 @@ const BlogsSection = () => {
     axios
       .get(url)
       .then((res) => {
+        setAllBlogs(res.data);
         setBlogs(res.data);
       })
       .catch((error) => {
@@ -70,6 +84,8 @@ const BlogsSection = () => {
                         className="form-control border-0 px-1"
                         aria-label="Search our blog..."
                         placeholder="Search our blog..."
+                        onKeyDown={onSearch}
+                        onChange={(e) => setSearchValue(e.target.value)}
                       />
 
                       <div className="input-group-append">
