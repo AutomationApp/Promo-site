@@ -16,8 +16,8 @@ const TalkSection = (e) => {
     data.append("fullname", name);
     data.append("email", email);
     data.append("message", message);
-    const url =
-      "https://wordpress-638795-2187391.cloudwaysapps.com/wp-json/contact-form-7/v1/contact-forms/27/feedback";
+
+    const url = `${process.env.GATSBY_API_URL}/wp-json/contact-form-7/v1/contact-forms/27/feedback`;
 
     axios
       .post(url, data)
