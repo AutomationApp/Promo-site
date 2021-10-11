@@ -1,14 +1,23 @@
 import React from "react";
 import Footer from "./footer/footer";
 import NavMenu from "./navbar";
-import { Helmet } from "react-helmet";
+import useNavbar from "../../hooks/useNavbar";
+import LoadingSpinner from "./loading-spinner";
 
 const Layout = ({ children }) => {
+  const { navLinks, loading } = useNavbar();
+
   return (
     <>
-      <NavMenu />
-      <main>{children}</main>
-      <Footer />
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <>
+          <NavMenu navLinks={navLinks} />
+          <main>{children}</main>
+          <Footer />
+        </>
+      )}
     </>
   );
 };

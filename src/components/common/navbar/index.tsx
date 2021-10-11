@@ -2,10 +2,9 @@ import React, { useState } from "react";
 //@ts-ignore
 import Brand from "../../../assets/img/brand.svg";
 import { Link } from "gatsby";
-import { DropdownData } from "../../../utils/constants";
 import CustomDropdownItem from "./dropdown-item";
 
-const NavMenu = () => {
+const NavMenu = ({ navLinks }) => {
   const [dropDown1, setDropDown1] = useState(false);
   const [navbarMenu, setNavbarMenu] = useState(false);
 
@@ -67,76 +66,54 @@ const NavMenu = () => {
           </button>
 
           <ul className="navbar-nav ml-auto">
-            <li
-              className="nav-item dropdown"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            >
-              <Link
-                className="nav-link dropdown-toggle"
-                onClick={() => setNavbarMenu(false)}
-                to="/product-tour"
+            {navLinks.map((item) => (
+              <li
+                className={
+                  item.title === "Product Tour"
+                    ? "nav-item dropdown"
+                    : "nav-item"
+                }
+                key={item.ID}
+                onMouseEnter={
+                  item.title === "Product Tour" ? onMouseEnter : null
+                }
+                onMouseLeave={
+                  item.title === "Product Tour" ? onMouseLeave : null
+                }
               >
-                Product Tour
-              </Link>
-
-              <div
-                className={`${
-                  dropDown1
-                    ? "dropdown-menu dropdown-menu-md show"
-                    : "dropdown-menu dropdown-menu-md"
-                }`}
-                aria-labelledby="navbarLandings"
-              >
-                <div className="list-group list-group-flush">
-                  {DropdownData.map((item) => (
-                    <CustomDropdownItem
-                      key={item.id}
-                      data={item}
-                      navState={changeNavbarState}
-                    />
-                  ))}
-                </div>
-              </div>
-            </li>
-
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                onClick={() => setNavbarMenu(false)}
-                to="/cases"
-              >
-                Use cases
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                onClick={() => setNavbarMenu(false)}
-                to="/pricing"
-              >
-                Pricing
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                onClick={() => setNavbarMenu(false)}
-                to="/contact"
-              >
-                Contact
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/blogs"
-                onClick={() => setNavbarMenu(false)}
-                className="nav-link"
-              >
-                Blogs
-              </Link>
-            </li>
+                <Link
+                  className={
+                    item.title === "Product Tour"
+                      ? "nav-link dropdown-toggle"
+                      : "nav-link"
+                  }
+                  onClick={changeNavbarState}
+                  to={item.url}
+                >
+                  {item.title}
+                </Link>
+                {item.title === "Product Tour" ? (
+                  <div
+                    className={`${
+                      dropDown1
+                        ? "dropdown-menu dropdown-menu-md show"
+                        : "dropdown-menu dropdown-menu-md"
+                    }`}
+                    aria-labelledby="navbarLandings"
+                  >
+                    <div className="list-group list-group-flush">
+                      {item.child_items.map((childItem) => (
+                        <CustomDropdownItem
+                          key={childItem.ID}
+                          data={childItem}
+                          navState={changeNavbarState}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </li>
+            ))}
           </ul>
 
           <div className="ml-auto flex">
