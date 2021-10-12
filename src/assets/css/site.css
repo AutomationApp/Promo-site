@@ -1,3 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+.footerRow {
+  margin: 0 -200px;
+}
+@media (max-width: 1400px) {
+  .footerRow {
+    margin: 0 0;
+  }
+}

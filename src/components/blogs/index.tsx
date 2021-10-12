@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import CurveShape from "../common/curve-shape";
 import Img from "../../assets/img/covers/cover-13.jpg";
 import BlogItem from "./blog-item";
@@ -10,6 +11,17 @@ const BlogsSection = () => {
   const [blogs, setBlogs] = useState([]);
   const [allBlogs, setAllBlogs] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const projectsPerPage = 12;
+  const offset = pageNumber * projectsPerPage;
+
+  let pageCount = Math.ceil(blogs.length / projectsPerPage);
+
+  const changePage = ({ selected: selectedPage }: any) => {
+    setPageNumber(selectedPage);
+    window.scrollTo(0, 500);
+  };
 
   const onSearch = () => {
     const res = allBlogs.filter((proj) =>
@@ -20,11 +32,12 @@ const BlogsSection = () => {
     );
 
     setBlogs(res);
+    setPageNumber(0);
   };
 
   useEffect(() => {
     const url =
-      "https://wordpress-638795-2187391.cloudwaysapps.com/wp-json/wp/v2/posts";
+      "https://wordpress-638795-2187391.cloudwaysapps.com/wp-json/wp/v2/posts?per_page=100";
     axios
       .get(url)
       .then((res) => {
@@ -40,7 +53,7 @@ const BlogsSection = () => {
   return (
     <>
       {loading ? (
-        <LoadingSpinner />
+        <LoadingSpinner height="100vh" />
       ) : (
         <>
           <section
@@ -151,19 +164,30 @@ const BlogsSection = () => {
                 </div>
               </div>
               <div className="row">
-                {blogs.map((item) => (
+                {blogs.slice(offset, offset + projectsPerPage).map((item) => (
                   <BlogItem key={item.id} blog={item} />
                 ))}
               </div>
+
               <div className="row justify-content-center py-7 py-md-10">
-                <div className="col-12 col-md-9 col-lg-8 col-xl-7">
-                  <a
-                    href="#!"
-                    className="btn btn-block btn-outline-gray-300 d-flex align-items-center"
-                  >
-                    <span className="mx-auto">Load more</span>
-                    <i className="fe fe-arrow-right"></i>
-                  </a>
+                <div className="">
+                  <ReactPaginate
+                    initialPage={0}
+                    breakLabel={<a href="">...</a>}
+                    pageCount={pageCount}
+                    forcePage={pageNumber}
+                    onPageChange={changePage}
+                    breakClassName={"page-item"}
+                    breakLinkClassName={"page-link"}
+                    containerClassName={"pagination"}
+                    pageClassName={"page-item"}
+                    pageLinkClassName={"page-link"}
+                    previousClassName={"page-item"}
+                    previousLinkClassName={"page-link"}
+                    nextClassName={"page-item"}
+                    nextLinkClassName={"page-link"}
+                    activeClassName={"active"}
+                  />
                 </div>
               </div>
             </div>

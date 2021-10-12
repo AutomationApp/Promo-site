@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import PersonImg from "../../assets/img/avatars/avatar-1.jpg";
 import Insta from "../.././assets/img/icons/social/instagram.svg";
 import Fb from "../.././assets/img/icons/social/facebook.svg";
 import Twitter from "../.././assets/img/icons/social/twitter.svg";
 import BG from "../.././assets/img/covers/cover-8.jpg";
 import CurveShape from "../common/curve-shape";
 import LoadingSpinner from "../common/loading-spinner";
+import moment from "moment";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
 
 const BlogSection = ({ slug }) => {
   const [blog, setBlog] = useState<any>();
@@ -18,18 +19,17 @@ const BlogSection = ({ slug }) => {
       .get(url)
       .then((res) => {
         setBlog(res.data[0]);
-        console.log(blog.featured_image.size_full);
       })
       .catch((error) => {
         console.log(error);
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [slug]);
 
   return (
     <>
       {loading ? (
-        <LoadingSpinner />
+        <LoadingSpinner height="100vh" />
       ) : (
         <>
           <section
@@ -59,34 +59,36 @@ const BlogSection = ({ slug }) => {
               <div className="row justify-content-center">
                 <div className="col-12 col-md-10 col-lg-9 col-xl-8">
                   <h1 className="display-4 text-center">
-                    Remote Work is the Future, but Should You Go Remote?
+                    {blog.title.rendered}
                   </h1>
 
-                  <p className="lead mb-7 text-center text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis nec condimentum quam. Fusce pellentesque faucibus lorem
-                    at viverra. Integer at feugiat odio. In placerat euismod
-                    risus proin.
-                  </p>
+                  <p
+                    className="lead mb-7 text-center text-muted"
+                    dangerouslySetInnerHTML={{
+                      __html: blog.excerpt.rendered,
+                    }}
+                  />
 
                   <div className="row align-items-center py-5 border-top border-bottom">
                     <div className="col-auto">
                       <div className="avatar avatar-lg">
                         <img
-                          src={PersonImg}
+                          src={blog.author.author_avatar}
                           alt="..."
                           className="avatar-img rounded-circle"
                         />
                       </div>
                     </div>
                     <div className="col ml-n5">
-                      <h6 className="text-uppercase mb-0">Ab Hadley</h6>
+                      <h6 className="text-uppercase mb-0">
+                        {blog.author.author_name}
+                      </h6>
 
                       <time
                         className="font-size-sm text-muted"
                         dateTime="2019-05-20"
                       >
-                        Published on May 20, 2019
+                        Published on {moment(blog.date).format("MMM DD YYYY")}
                       </time>
                     </div>
                     <div className="col-auto">
@@ -96,31 +98,27 @@ const BlogSection = ({ slug }) => {
 
                       <ul className="d-inline list-unstyled list-inline list-social">
                         <li className="list-inline-item list-social-item mr-3">
-                          <a href="#!" className="text-decoration-none">
-                            <img
-                              src={Insta}
-                              className="list-social-icon"
-                              alt="..."
-                            />
-                          </a>
+                          <FacebookShareButton
+                            url={`${location.href}`}
+                            quote={blog.title.rendered}
+                            // quote={"フェイスブックはタイトルが付けれるようです"}
+                            // hashtag={"#hashtag"}
+                            className="Demo__some-network__share-button"
+                          >
+                            <img alt="fb" src={Fb} className="social-icons" />
+                          </FacebookShareButton>
                         </li>
                         <li className="list-inline-item list-social-item mr-3">
-                          <a href="#!" className="text-decoration-none">
+                          <TwitterShareButton
+                            title={blog.title.rendered}
+                            url={`${location.href}`}
+                          >
                             <img
-                              src={Fb}
-                              className="list-social-icon"
-                              alt="..."
-                            />
-                          </a>
-                        </li>
-                        <li className="list-inline-item list-social-item mr-3">
-                          <a href="#!" className="text-decoration-none">
-                            <img
+                              alt="twitter"
                               src={Twitter}
-                              className="list-social-icon"
-                              alt="..."
+                              className="social-icons"
                             />
-                          </a>
+                          </TwitterShareButton>
                         </li>
                       </ul>
                     </div>
