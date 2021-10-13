@@ -32,7 +32,7 @@ const Footer = ({ footerData, blogs }) => {
               ))}
             </ul>
 
-            <h4 className="font-weight-bold text-uppercase text-gray-700 mt-5">
+            <h4 className="font-weight-bold font-size-sm text-uppercase text-gray-700 mt-5">
               {footerData.acf.second_menu_title}
             </h4>
             <ul className="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
@@ -55,7 +55,11 @@ const Footer = ({ footerData, blogs }) => {
               {blogs.slice(0, 5).map((item) => (
                 <li className="mb-3">
                   <Link to={`/blog?slug=${item.slug}`} className="text-primary">
-                    {item.title.rendered}
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: item.title.rendered,
+                      }}
+                    />
                   </Link>
                   <br />
                   {moment(item.date).format("MMM DD YYYY")}

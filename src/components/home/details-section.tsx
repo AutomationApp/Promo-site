@@ -1,12 +1,12 @@
 import React from "react";
 //@ts-ignore
-import Img1 from "../../assets/img/photos/photo-10.jpg";
+import Img1 from "../../assets/img/home/long1.png";
 //@ts-ignore
-import Img2 from "../../assets/img/photos/photo-12.jpg";
+import Img2 from "../../assets/img/home/short1.png";
 //@ts-ignore
-import Img3 from "../../assets/img/photos/photo-9.jpg";
+import Img3 from "../../assets/img/home/short2.png";
 //@ts-ignore
-import Img4 from "../../assets/img/photos/photo-11.jpg";
+import Img4 from "../../assets/img/home/long2.png";
 //@ts-ignore
 import detail1 from "../../assets/img/home/detail1.jpg";
 //@ts-ignore
@@ -19,7 +19,7 @@ import detail4 from "../../assets/img/home/detail4.jpg";
 const DetailsSection = () => {
   return (
     <>
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-gray-200">
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-12 col-md-6 col-lg-5">
