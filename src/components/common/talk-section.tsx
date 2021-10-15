@@ -22,7 +22,6 @@ const TalkSection = (e) => {
     axios
       .post(url, data)
       .then(({ data }: any) => {
-        console.log(data);
         if (data.status === "mail_sent") {
           toast.success("Success!");
         } else {

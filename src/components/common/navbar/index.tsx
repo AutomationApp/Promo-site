@@ -67,52 +67,56 @@ const NavMenu = ({ navLinks }) => {
 
           <ul className="navbar-nav ml-auto">
             {navLinks.map((item) => (
-              <li
-                className={
-                  item.title === "Product Tour"
-                    ? "nav-item dropdown"
-                    : "nav-item"
-                }
-                key={item.ID}
-                onMouseEnter={
-                  item.title === "Product Tour" ? onMouseEnter : null
-                }
-                onMouseLeave={
-                  item.title === "Product Tour" ? onMouseLeave : null
-                }
-              >
-                <Link
-                  className={
-                    item.title === "Product Tour"
-                      ? "nav-link dropdown-toggle"
-                      : "nav-link"
-                  }
-                  onClick={changeNavbarState}
-                  to={item.url}
-                >
-                  {item.title}
-                </Link>
-                {item.title === "Product Tour" ? (
-                  <div
-                    className={`${
-                      dropDown1
-                        ? "dropdown-menu dropdown-menu-md show"
-                        : "dropdown-menu dropdown-menu-md"
-                    }`}
-                    aria-labelledby="navbarLandings"
+              <>
+                {item.parentId === null ? (
+                  <li
+                    className={
+                      item.label === "Product Tour"
+                        ? "nav-item dropdown"
+                        : "nav-item"
+                    }
+                    key={item.id}
+                    onMouseEnter={
+                      item.label === "Product Tour" ? onMouseEnter : null
+                    }
+                    onMouseLeave={
+                      item.label === "Product Tour" ? onMouseLeave : null
+                    }
                   >
-                    <div className="list-group list-group-flush">
-                      {item.child_items.map((childItem) => (
-                        <CustomDropdownItem
-                          key={childItem.ID}
-                          data={childItem}
-                          navState={changeNavbarState}
-                        />
-                      ))}
-                    </div>
-                  </div>
+                    <Link
+                      className={
+                        item.label === "Product Tour"
+                          ? "nav-link dropdown-toggle"
+                          : "nav-link"
+                      }
+                      onClick={changeNavbarState}
+                      to={item.path}
+                    >
+                      {item.label}
+                    </Link>
+                    {item.label === "Product Tour" ? (
+                      <div
+                        className={`${
+                          dropDown1
+                            ? "dropdown-menu dropdown-menu-md show"
+                            : "dropdown-menu dropdown-menu-md"
+                        }`}
+                        aria-labelledby="navbarLandings"
+                      >
+                        <div className="list-group list-group-flush">
+                          {item.childItems.nodes.map((childItem) => (
+                            <CustomDropdownItem
+                              key={childItem.id}
+                              data={childItem}
+                              navState={changeNavbarState}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                  </li>
                 ) : null}
-              </li>
+              </>
             ))}
           </ul>
 

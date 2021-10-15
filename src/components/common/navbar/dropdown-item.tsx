@@ -10,16 +10,16 @@ const CustomDropdownItem = ({ data, navState }) => {
         to="/product-tour"
       >
         <div className="icon icon-sm text-primary">
-          <img src={data.acf.icon.url} alt="icon" />
+          <img src={data.menuFields.icon.sourceUrl} alt="icon" />
         </div>
 
         <div className="ml-4">
           <h6 className="font-weight-bold text-uppercase text-primary mb-0">
-            {data.title}
+            {data.label}
           </h6>
 
           <p className="font-size-sm text-gray-700 mb-0">
-            {data.acf.description}
+            {data.menuFields.description}
           </p>
         </div>
       </Link>

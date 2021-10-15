@@ -1,177 +1,79 @@
+import { Link } from "gatsby";
 import React from "react";
 //@ts-ignore
 import Brand from "../../../assets/img/brand.svg";
-//@ts-ignore
-import Insta from "../../../assets/img/icons/social/instagram.svg";
-//@ts-ignore
-import FB from "../../../assets/img/icons/social/facebook.svg";
-//@ts-ignore
-import Twitter from "../../../assets/img/icons/social/twitter.svg";
-//@ts-ignore
-import Pin from "../../../assets/img/icons/social/pinterest.svg";
+import moment from "moment";
 
-const Footer = () => {
+const Footer = ({ footerData, blogs }) => {
   return (
     <footer className="py-8 py-md-11 bg-gray-200">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-4 col-lg-3">
+      <div className="container-xl">
+        <div className="row footerRow">
+          <div className="col-12 col-sm-6 col-md-2">
             <img
               src={Brand}
               alt="..."
               className="footer-brand img-fluid mb-2"
             />
-
-            <p className="text-gray-700 mb-2">A better way to build.</p>
-
-            <ul className="list-unstyled list-inline list-social mb-6 mb-md-0">
-              <li className="list-inline-item list-social-item mr-3">
-                <a href="#!" className="text-decoration-none">
-                  <img src={Insta} className="list-social-icon" alt="..." />
-                </a>
-              </li>
-              <li className="list-inline-item list-social-item mr-3">
-                <a href="#!" className="text-decoration-none">
-                  <img src={FB} className="list-social-icon" alt="..." />
-                </a>
-              </li>
-              <li className="list-inline-item list-social-item mr-3">
-                <a href="#!" className="text-decoration-none">
-                  <img src={Twitter} className="list-social-icon" alt="..." />
-                </a>
-              </li>
-              <li className="list-inline-item list-social-item">
-                <a href="#!" className="text-decoration-none">
-                  <img src={Pin} className="list-social-icon" alt="..." />
-                </a>
-              </li>
-            </ul>
           </div>
-          <div className="col-6 col-md-4 col-lg-2">
-            <h6 className="font-weight-bold text-uppercase text-gray-700">
-              Products
-            </h6>
+
+          <div className="col-12 col-sm-6 col-md-2">
+            <h4 className="font-weight-bold text-uppercase text-gray-700">
+              {footerData.firstMenuTitle}
+            </h4>
 
             <ul className="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Page Builder
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  UI Kit
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Styleguide
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#!" className="text-reset">
-                  Changelog
-                </a>
-              </li>
+              {footerData.firstMenu.map((item) => (
+                <li className="mb-3">
+                  <Link to={item.url} className="text-reset">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
-          <div className="col-6 col-md-4 col-lg-2">
-            <h6 className="font-weight-bold text-uppercase text-gray-700">
-              Services
-            </h6>
 
+            <h4 className="font-weight-bold font-size-sm text-uppercase text-gray-700 mt-5">
+              {footerData.secondMenuTitle}
+            </h4>
             <ul className="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Documentation
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Changelog
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Pagebuilder
-                </a>
-              </li>
-              <li>
-                <a href="#!" className="text-reset">
-                  UI Kit
-                </a>
-              </li>
+              {footerData.secondMenu.map((item) => (
+                <li className="mb-3">
+                  <Link to={item.url} className="text-reset">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-0">
-            <h6 className="font-weight-bold text-uppercase text-gray-700">
-              Connect
-            </h6>
+
+          <div className="col-12 col-sm-6 col-md-4 offset-lg-0">
+            <h4 className="font-weight-bold text-uppercase text-gray-700">
+              RECENT POSTS
+            </h4>
 
             <ul className="list-unstyled text-muted mb-0">
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Page Builder
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  UI Kit
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Styleguide
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Documentation
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Changelog
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#!" className="text-reset">
-                  Changelog
-                </a>
-              </li>
+              {blogs.slice(0, 5).map((item) => (
+                <li className="mb-3">
+                  <Link to={item.uri} className="text-primary">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: item.title,
+                      }}
+                    />
+                  </Link>
+                  <br />
+                  {moment(item.date).format("MMM DD YYYY")}
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="col-6 col-md-4 col-lg-2">
-            <h6 className="font-weight-bold text-uppercase text-gray-700">
-              Legal
-            </h6>
+          <div className="col-12 col-sm-6 col-md-4">
+            <h4 className="font-weight-bold text-uppercase text-gray-700">
+              {footerData.title}
+            </h4>
 
             <ul className="list-unstyled text-muted mb-0">
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Documentation
-                </a>
-              </li>
-              <li className="mb-3">
-                <a href="#!" className="text-reset">
-                  Changelog
-                </a>
-              </li>
-              <li>
-                <a href="#!" className="text-reset">
-                  Pagebuilder
-                </a>
-              </li>
+              <p>{footerData.description}</p>
             </ul>
           </div>
         </div>
