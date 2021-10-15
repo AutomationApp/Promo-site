@@ -5,13 +5,10 @@ import { Link } from "gatsby";
 const BlogItem = ({ blog }) => {
   return (
     <div className="col-12 col-md-6 col-lg-4 d-flex mt-5">
-      <Link
-        to={`/blog?slug=${blog.slug}`}
-        className="card-img-top text-decoration-none"
-      >
+      <Link to={blog.uri} className="card-img-top text-decoration-none">
         <div className="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
           <img
-            src={blog.featured_image.size_full}
+            src={blog.featuredImage.node.sourceUrl}
             alt="..."
             className="card-img-top "
             height="250px"
@@ -37,14 +34,14 @@ const BlogItem = ({ blog }) => {
           <div className="card-body">
             <h3
               dangerouslySetInnerHTML={{
-                __html: blog.title.rendered,
+                __html: blog.title,
               }}
             />
 
             <p
               className="mb-0 text-muted"
               dangerouslySetInnerHTML={{
-                __html: blog.excerpt.rendered.slice(3, 95) + "...",
+                __html: blog.excerpt,
               }}
             />
           </div>
@@ -54,14 +51,14 @@ const BlogItem = ({ blog }) => {
 
             <div className="avatar avatar-sm mr-2">
               <img
-                src={blog.author.author_avatar}
+                src={blog.author.node.avatar.url}
                 alt="..."
                 className="avatar-img rounded-circle"
               />
             </div>
 
             <h6 className="text-uppercase text-muted mr-2 mb-0">
-              {blog.author.author_name}
+              {blog.author.node.name}
             </h6>
 
             <p className="h6 text-uppercase text-muted mb-0 ml-auto">
