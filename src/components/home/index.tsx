@@ -1,98 +1,113 @@
 import React from "react";
-//@ts-ignore
-import Img1 from "../../assets/img/home/long1.png";
-//@ts-ignore
-import Img2 from "../../assets/img/home/short1.png";
-//@ts-ignore
-import Img3 from "../../assets/img/home/short2.png";
-//@ts-ignore
-import Img4 from "../../assets/img/home/long2.png";
-//@ts-ignore
-import detail1 from "../../assets/img/home/detail1.jpg";
-//@ts-ignore
-import detail2 from "../../assets/img/home/detail2.jpg";
-//@ts-ignore
-import detail3 from "../../assets/img/home/detail3.jpg";
-//@ts-ignore
-import detail4 from "../../assets/img/home/detail4.jpg";
+import { useHomePageQuery } from "../../graphql/useHomeQuery";
 
 const DetailsSection = () => {
+  const { wpPage } = useHomePageQuery();
+  const { home } = wpPage;
   return (
     <>
+      <section className="pt-4 pt-md-11">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-5 col-lg-6 order-md-2">
+              <img
+                src={home.homeHeroSection.image.sourceUrl}
+                className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+                alt="..."
+                data-aos="fade-up"
+                data-aos-delay="100"
+              />
+            </div>
+            <div
+              className="col-12 col-md-7 col-lg-6 order-md-1"
+              data-aos="fade-up"
+            >
+              <h1 className="display-3 text-center text-md-left">
+                {home.homeHeroSection.title}
+              </h1>
+
+              <p className="lead text-center text-md-left text-muted mb-6 mb-lg-8">
+                {home.homeHeroSection.description}
+              </p>
+
+              <div className="text-center text-md-left">
+                <a
+                  href="overview.html"
+                  className="btn btn-primary shadow lift mr-1"
+                >
+                  {home.homeHeroSection.button1}
+                  <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                </a>
+                <a
+                  href="docs/index.html"
+                  className="btn btn-outline-primary lift ml-2"
+                >
+                  {home.homeHeroSection.button2}
+                </a>
+              </div>
+
+              <p className="text-center text-md-left text-muted mt-3 mt-lg-3">
+                {home.homeHeroSection.subtitle}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-10 bg-gray-200">
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-12 col-md-6 col-lg-5">
-              <h2>
-                Create powerful automations to
-                <span className="text-success"> enhance your business</span>.
-              </h2>
+              <h2
+                dangerouslySetInnerHTML={{
+                  __html: home.automationSection.title,
+                }}
+              />
 
               <p className="font-size-lg text-gray-700 mb-6">
-                Your new E-commerce automation engine. Letting you get
-                everything done - automatically.
+                {home.automationSection.description}
               </p>
 
               <div className="row">
-                <div className="col-12 col-lg-6">
-                  <div className="d-flex">
-                    <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                      <i className="fe fe-check"></i>
+                {home.automationSection.points.map((item) => (
+                  <div className="col-12 col-lg-6">
+                    <div className="d-flex">
+                      <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
+                        <i className="fe fe-check"></i>
+                      </div>
+
+                      <p className="text-success">{item.point}</p>
                     </div>
-
-                    <p className="text-success">Send SMS & emails</p>
                   </div>
-
-                  <div className="d-flex">
-                    <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                      <i className="fe fe-check"></i>
-                    </div>
-
-                    <p className="text-success mb-lg-0">
-                      Trigger advanced flows
-                    </p>
-                  </div>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div className="d-flex">
-                    <span className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                      <i className="fe fe-check"></i>
-                    </span>
-
-                    <p className="text-success">Customise order overviews</p>
-                  </div>
-
-                  <div className="d-flex">
-                    <div className="badge badge-rounded-circle badge-success-soft mr-1 mr-4">
-                      <i className="fe fe-check"></i>
-                    </div>
-
-                    <p className="text-success mb-0">
-                      Automate almost anything
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             <div className="col-12 col-md-6">
               <div className="row">
                 <div className="col-6 mt-8 mr-n5" data-aos="fade-up">
                   <img
-                    src={Img1}
+                    src={home.automationSection.images[0].sourceUrl}
                     alt="..."
                     className="img-fluid mb-4 rounded"
                   />
 
-                  <img src={Img2} alt="..." className="img-fluid rounded" />
+                  <img
+                    src={home.automationSection.images[1].sourceUrl}
+                    alt="..."
+                    className="img-fluid rounded"
+                  />
                 </div>
                 <div className="col-6" data-aos="fade-up" data-aos-delay="100">
                   <img
-                    src={Img3}
+                    src={home.automationSection.images[2].sourceUrl}
                     alt="..."
                     className="img-fluid mb-4 rounded"
                   />
 
-                  <img src={Img4} alt="..." className="img-fluid rounded" />
+                  <img
+                    src={home.automationSection.images[3].sourceUrl}
+                    alt="..."
+                    className="img-fluid rounded"
+                  />
                 </div>
               </div>
             </div>
@@ -105,23 +120,25 @@ const DetailsSection = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-12 col-md-6 col-lg-5 order-md-2">
               <div className="w-100 w-md-130 ">
-                <h2 className="font-weight-bold">
-                  <span className="text-primary">WooCommerce</span> 5 Minute
-                  Installation
-                </h2>
+                <h2
+                  className="font-weight-bold"
+                  dangerouslySetInnerHTML={{
+                    __html: home.detailSection1.title,
+                  }}
+                />
 
                 <p className="font-size-lg text-muted mb-5">
-                  Prebuilt integrations lets you get started quickly. From
-                  installation to the first automated process, takes as little
-                  as 10 minutes with partner systems like WooCommerce. After
-                  installation of Automation.app Woo plugin we can automatically
-                  sync your orders, clients and more.
+                  {home.detailSection1.description}
                 </p>
               </div>
             </div>
             <div className="col-12 col-md-6 order-md-1" data-aos="fade-up">
               <div className="w-100 w-md-130 float-right mb-6 mb-md-0">
-                <img src={detail1} className="img-fluid" alt="..." />
+                <img
+                  src={home.detailSection1.image.sourceUrl}
+                  className="img-fluid"
+                  alt="..."
+                />
               </div>
             </div>
           </div>
@@ -132,17 +149,23 @@ const DetailsSection = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
-              <h2 className="font-weight-bold">Automation Engine</h2>
-
+              <h2
+                className="font-weight-bold"
+                dangerouslySetInnerHTML={{
+                  __html: home.detailSection2.title,
+                }}
+              />
               <p className="font-size-lg text-muted mb-5">
-                Automate communication, deliver relevant messages using purchase
-                information, lifecycle stage, and more. Works well for both
-                marketing automation and business process automation.
+                {home.detailSection2.description}
               </p>
             </div>
             <div className="col-12 col-md-6">
               <div className="w-md-130">
-                <img src={detail2} className="img-fluid" alt="..." />
+                <img
+                  src={home.detailSection2.image.sourceUrl}
+                  className="img-fluid"
+                  alt="..."
+                />
               </div>
             </div>
           </div>
@@ -154,15 +177,14 @@ const DetailsSection = () => {
           <div className="row align-items-center justify-content-between">
             <div className="col-12 col-md-6 col-lg-5 order-md-2">
               <div className="w-100 w-md-130 ">
-                <h2 className="font-weight-bold">List Orders and Clients</h2>
-
+                <h2
+                  className="font-weight-bold"
+                  dangerouslySetInnerHTML={{
+                    __html: home.detailSection3.title,
+                  }}
+                />
                 <p className="font-size-lg text-muted mb-5">
-                  Segmentation and order listing is key to lean flows and
-                  automation in any E-commerce. With the simple segment
-                  filtering, you'll create conditions in no time that lists
-                  orders of any specific type. Giving your Automation.app
-                  interface a 100% custom interface. Letting you create any list
-                  of orders and clients.
+                  {home.detailSection3.description}
                 </p>
 
                 <a
@@ -175,7 +197,11 @@ const DetailsSection = () => {
             </div>
             <div className="col-12 col-md-6 order-md-1" data-aos="fade-up">
               <div className="w-100 w-md-130 float-right mb-6 mb-md-0">
-                <img src={detail3} className="img-fluid" alt="..." />
+                <img
+                  src={home.detailSection3.image.sourceUrl}
+                  className="img-fluid"
+                  alt="..."
+                />
               </div>
             </div>
           </div>
@@ -186,19 +212,23 @@ const DetailsSection = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
-              <h2 className="font-weight-bold">Built for Teamwork</h2>
-
+              <h2
+                className="font-weight-bold"
+                dangerouslySetInnerHTML={{
+                  __html: home.detailSection4.title,
+                }}
+              />
               <p className="font-size-lg text-muted mb-5">
-                Invite colleagues and assign tasks to each other - for example,
-                you can collaborate with the accounting team, let them have a
-                list of orders that might cause complexity or be stopped later
-                in the process. - Team setup gives you control over user roles
-                and lets each employee build personal automations and segments.
+                {home.detailSection3.description}
               </p>
             </div>
             <div className="col-12 col-md-6">
               <div className="w-md-130">
-                <img src={detail4} className="img-fluid" alt="..." />
+                <img
+                  src={home.detailSection3.image.sourceUrl}
+                  className="img-fluid"
+                  alt="..."
+                />
               </div>
             </div>
           </div>
@@ -225,14 +255,14 @@ const DetailsSection = () => {
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <span className="badge badge-pill btn-success mb-4">
                 <span className="h6 font-weight-bold text-uppercase">
-                  NO CREDIT CARD REQUIRED
+                  {home.getStarted.text}
                 </span>
               </span>
 
-              <h1 className="display-4 text-white">Get started today</h1>
+              <h1 className="display-4 text-white">{home.getStarted.title}</h1>
 
               <p className="font-size-lg text-muted mb-6 mb-md-8">
-                Start growing your business with effortless automation.
+                {home.getStarted.subtitle}
               </p>
 
               <a
@@ -240,7 +270,8 @@ const DetailsSection = () => {
                 target="_blank"
                 className="btn btn-success lift"
               >
-                Try it free <i className="fe fe-arrow-right"></i>
+                {home.getStarted.buttonText}{" "}
+                <i className="fe fe-arrow-right"></i>
               </a>
             </div>
           </div>

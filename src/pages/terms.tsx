@@ -1,22 +1,15 @@
 import React from "react";
-import LoadingSpinner from "../components/common/loading-spinner";
-import useTerms from "../hooks/useTerms";
+import { useTermsQuery } from "../graphql/useTermsQuery";
 
 const Terms = () => {
-  const { pageData, loading } = useTerms();
+  const { wpPage } = useTermsQuery();
 
   return (
-    <>
-      {loading ? (
-        <LoadingSpinner height="100vh" />
-      ) : (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: pageData.content.rendered,
-          }}
-        />
-      )}
-    </>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: wpPage.content,
+      }}
+    />
   );
 };
 
