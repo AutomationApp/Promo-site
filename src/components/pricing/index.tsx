@@ -3,8 +3,12 @@ import Faqs from "../common/faqs";
 import Pricing from "../common/pricing";
 import CurveShape from "../../components/common/curve-shape";
 import TalkSection from "../common/talk-section";
+import { usePricingQuery } from "../../graphql/usePricingQuery";
 
 const PricingSection = () => {
+  const { wpPage } = usePricingQuery();
+  const { pricing } = wpPage;
+
   return (
     <>
       <section className="pt-8 pt-md-11 pb-10 pb-md-15 bg-dark">
@@ -38,12 +42,11 @@ const PricingSection = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <h1 className="display-2 text-white">
-                Our pricing is simple and flexible
+                {pricing.pricingHeroSection.title}
               </h1>
 
               <p className="lead text-white-80 mb-6 mb-md-8">
-                We offer a simple pricing model based on the number of
-                automations you need.
+                {pricing.pricingHeroSection.subtitle}
               </p>
             </div>
           </div>
@@ -52,25 +55,23 @@ const PricingSection = () => {
 
       <CurveShape />
 
-      <Pricing />
+      <Pricing pricing={pricing.pricing} />
 
       <section className="pt-10">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h2>
-                <span className="font-weight-bold text-primary-desat">
-                  Automation.app{" "}
-                </span>
-                is free to set up and test -for 30 days Business.
-              </h2>
+              <h2
+                dangerouslySetInnerHTML={{ __html: pricing.bodySection.title }}
+              />
 
-              <p className="font-size-lg text-muted mb-5">
-                Automation.app is running on a point-based pricing: These
-                credits automatically renew every month. You’ll only be paying
-                the fees, when you start using Automation.app on live workflows
-                after you set up billing inside the Automation.app.
-              </p>
+              <p
+                className="font-size-lg text-muted mb-5"
+                dangerouslySetInnerHTML={{
+                  __html: pricing.bodySection.description,
+                }}
+              />
+
               <div className="row justify-content-center mb-5">
                 <div className="col-auto">
                   <button type="submit" className="btn btn-primary lift">
@@ -78,15 +79,18 @@ const PricingSection = () => {
                   </button>
                 </div>
               </div>
-              <p className="font-size-lg text-muted">
-                Get free test credits • No credit card required • Cancel anytime
-              </p>
+              <p
+                className="font-size-lg text-muted"
+                dangerouslySetInnerHTML={{
+                  __html: pricing.bodySection.subtitle,
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <Faqs />
+      <Faqs faqs={pricing.faqs} />
       <TalkSection />
     </>
   );

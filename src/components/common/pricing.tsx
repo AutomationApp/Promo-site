@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pricing = () => {
+const Pricing = ({ pricing }) => {
   return (
     <section className="mt-n8 mt-md-n14">
       <div className="container">
@@ -10,7 +10,9 @@ const Pricing = () => {
               <div className="card-body">
                 <div className="text-center mb-3">
                   <span className="badge badge-pill badge-primary-soft">
-                    <span className="h6 text-uppercase">STARTER</span>
+                    <span className="h6 text-uppercase">
+                      {pricing.starter.title}
+                    </span>
                   </span>
                 </div>
 
@@ -21,23 +23,27 @@ const Pricing = () => {
                     data-annual="0"
                     data-monthly="0"
                   >
-                    9
+                    {pricing.starter.price}
                   </span>
                   <span className="h2 align-self-end mb-1">/mo</span>
                 </div>
 
-                <p className="text-center text-muted mb-5">per month</p>
+                <p className="text-center text-muted mb-5">
+                  {pricing.starter.per}
+                </p>
 
                 <div className="d-flex">
                   <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
                     <i className="fe fe-check"></i>
                   </div>
-
-                  <p>250 monthly automation activities</p>
+                  {pricing.starter.points.map((item) => (
+                    <p key={item.point}>{item.point}</p>
+                  ))}
                 </div>
 
                 <a href="#!" className="btn btn-block btn-primary-soft">
-                  Try free <i className="fe fe-arrow-right ml-3"></i>
+                  {pricing.starter.buttonText}{" "}
+                  <i className="fe fe-arrow-right ml-3"></i>
                 </a>
               </div>
             </div>
@@ -47,7 +53,9 @@ const Pricing = () => {
               <div className="card-body">
                 <div className="text-center mb-3">
                   <span className="badge badge-pill badge-primary-soft">
-                    <span className="h6 text-uppercase">GROWTH</span>
+                    <span className="h6 text-uppercase">
+                      {pricing.growth.title}
+                    </span>
                   </span>
                 </div>
 
@@ -58,23 +66,28 @@ const Pricing = () => {
                     data-annual="29"
                     data-monthly="49"
                   >
-                    29
+                    {pricing.growth.price}
                   </span>
                   <span className="h2 align-self-end mb-1">/mo</span>
                 </div>
 
-                <p className="text-center text-muted mb-5">per month</p>
+                <p className="text-center text-muted mb-5">
+                  {pricing.growth.per}
+                </p>
 
                 <div className="d-flex">
                   <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
                     <i className="fe fe-check"></i>
                   </div>
 
-                  <p>1000 monthly automation activities</p>
+                  {pricing.growth.points.map((item) => (
+                    <p key={item.point}>{item.point}</p>
+                  ))}
                 </div>
 
                 <a href="#!" className="btn btn-block btn-primary">
-                  Try free <i className="fe fe-arrow-right ml-3"></i>
+                  {pricing.growth.buttonText}{" "}
+                  <i className="fe fe-arrow-right ml-3"></i>
                 </a>
               </div>
             </div>
@@ -84,7 +97,9 @@ const Pricing = () => {
               <div className="card-body">
                 <div className="text-center mb-3">
                   <span className="badge badge-pill badge-primary-soft">
-                    <span className="h6 text-uppercase">PREMIUM</span>
+                    <span className="h6 text-uppercase">
+                      {pricing.premium.title}
+                    </span>
                   </span>
                 </div>
 
@@ -95,23 +110,28 @@ const Pricing = () => {
                     data-annual="49"
                     data-monthly="69"
                   >
-                    69
+                    {pricing.premium.price}
                   </span>
                   <span className="h2 align-self-end mb-1">/mo</span>
                 </div>
 
-                <p className="text-center text-muted mb-5">per month</p>
+                <p className="text-center text-muted mb-5">
+                  {pricing.premium.per}
+                </p>
 
                 <div className="d-flex">
                   <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
                     <i className="fe fe-check"></i>
                   </div>
 
-                  <p>10000 monthly automation activities</p>
+                  {pricing.premium.points.map((item) => (
+                    <p key={item.point}>{item.point}</p>
+                  ))}
                 </div>
 
                 <a href="#!" className="btn btn-block btn-primary-soft">
-                  Try free <i className="fe fe-arrow-right ml-3"></i>
+                  {pricing.premium.buttonText}{" "}
+                  <i className="fe fe-arrow-right ml-3"></i>
                 </a>
               </div>
             </div>
