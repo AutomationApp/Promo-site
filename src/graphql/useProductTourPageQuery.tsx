@@ -1,10 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const usePrivacyQuery = () => {
+export const useProductTourQuery = () => {
   const privacy = useStaticQuery(graphql`
     {
       wpPage(title: { eq: "Product Tour" }) {
         productTour {
+          stepsData {
+            id
+            title
+            description
+          }
           productTourData {
             id
             title

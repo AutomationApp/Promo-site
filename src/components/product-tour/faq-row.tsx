@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import FaqItem from "./faq-item";
 
 const FaqRow = ({ data }) => {
-  const [imageSource, setImageSource] = useState(data.image1);
+  const [imageSource, setImageSource] = useState(data.image1.sourceUrl);
 
   const changeImageSource = (id) => {
     if (id === 1) {
-      setImageSource(data.image1);
+      setImageSource(data.image1.sourceUrl);
     } else if (id === 2) {
-      setImageSource(data.image2);
+      setImageSource(data.image2.sourceUrl);
     } else if (id === 3) {
-      setImageSource(data.image3);
+      setImageSource(data.image3.sourceUrl);
     } else if (id === 4) {
-      setImageSource(data.image4);
+      setImageSource(data.image4.sourceUrl);
     }
   };
 
