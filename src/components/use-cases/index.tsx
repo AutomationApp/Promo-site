@@ -1,8 +1,4 @@
 import React from "react";
-//@ts-ignore
-import Img4 from "../../assets/img/illustrations/illustration-6.png";
-//@ts-ignore
-import ContactImg from "../../assets/img/illustrations/illustration-1.png";
 import CurveShape from "../common/curve-shape";
 import { AutomationData } from "../../utils/constants";
 import CardItem from "./card-item";

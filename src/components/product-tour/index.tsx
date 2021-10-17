@@ -1,14 +1,17 @@
 import React from "react";
 import FaqRow from "./faq-row";
-import { FaqsRowData, StepsData } from "../../utils/constants";
 import Steps from "./steps";
+import { useProductTourQuery } from "../../graphql/useProductTourPageQuery";
 
 const ProductTourSection = () => {
+  const { wpPage } = useProductTourQuery();
+  const { productTour } = wpPage;
+
   return (
     <>
       <section className="pb-8 mb-md-8">
         <div className="container">
-          {FaqsRowData.map((item) => (
+          {productTour.productTourData.map((item) => (
             <FaqRow key={item.id} data={item} />
           ))}
         </div>
@@ -20,7 +23,7 @@ const ProductTourSection = () => {
             9 more reasons why customers love Automation.app
           </h2>
           <div className="row">
-            {StepsData.map((item) => (
+            {productTour.stepsData.map((item) => (
               <Steps key={item.id} step={item} />
             ))}
           </div>
