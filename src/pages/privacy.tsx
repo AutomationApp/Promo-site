@@ -1,15 +1,19 @@
 import React from "react";
+import Seo from "../components/common/seo";
 import { usePrivacyQuery } from "../graphql/usePrivacyQuery";
 
 const Privacy = () => {
   const { wpPage } = usePrivacyQuery();
 
   return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: wpPage.content,
-      }}
-    />
+    <>
+      <Seo title="Privacy policy - AutomationApp" />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: wpPage.content,
+        }}
+      />
+    </>
   );
 };
 
