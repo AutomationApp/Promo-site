@@ -4,7 +4,6 @@ import Twitter from "../assets/img/icons/social/twitter.svg";
 import BG from "../assets/img/covers/cover-8.jpg";
 import moment from "moment";
 // import { FacebookShareButton, TwitterShareButton } from "react-share";
-import CurveShape from "../components/common/curve-shape";
 import { graphql } from "gatsby";
 import Seo from "../components/common/seo";
 
