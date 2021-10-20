@@ -11,7 +11,6 @@ const BlogItem = ({ blog }) => {
             src={blog.featuredImage.node.sourceUrl}
             alt="..."
             className="card-img-top "
-            height="250px"
           />
 
           <div className="position-relative">

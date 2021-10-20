@@ -6,33 +6,27 @@ import moment from "moment";
 // import { FacebookShareButton, TwitterShareButton } from "react-share";
 import CurveShape from "../components/common/curve-shape";
 import { graphql } from "gatsby";
+import Seo from "../components/common/seo";
 
 const BlogSection = ({ data }) => {
-  const { wpPost } = data;
+  const { wpPost, site } = data;
 
   return (
     <>
+      <Seo
+        title={wpPost.title}
+        imageUrl={wpPost.featuredImage.node.sourceUrl}
+        pageUrl={site.siteMetadata.siteUrl + wpPost.uri}
+      />
       <section
         data-jarallax
         data-speed=".8"
         className="py-12 py-md-15 bg-cover jarallax"
         style={{ backgroundImage: `url("${BG}")` }}
       />
-      <CurveShape />
 
       <section className="py-7 py-md-9 border-bottom border-gray-300" id="info">
         <div className="container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <a
-                href="#info"
-                className="btn btn-white btn-rounded-circle shadow mt-n11 mt-md-n13"
-                data-toggle="smooth-scroll"
-              >
-                <i className="fe fe-arrow-down"></i>
-              </a>
-            </div>
-          </div>
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-9 col-xl-8">
               <h1
@@ -160,6 +154,11 @@ export const query = graphql`
         }
       }
       content
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `;

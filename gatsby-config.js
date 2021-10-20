@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "philipleth",
-    description: `Product Tour - AutomationApp`,
+    siteUrl: "https://philipleth.vercel.app/",
+    title: "Automate your E-commerce store - AutomationApp",
+    description: `Automate your e-commerce businesses. E-mail, SMS marketing automation and any customised e-commerce flow with deep e-commerce platform integration`,
     author: `@shahrukh`,
   },
   plugins: [
@@ -22,7 +26,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "https://wordpress-638795-2187391.cloudwaysapps.com/graphql",
+        url: `${process.env.GATSBY_API_URL}/graphql`,
         restApiRoutePrefix: "wp-json",
         useACF: true,
       },

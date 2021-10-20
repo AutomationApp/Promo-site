@@ -4,13 +4,17 @@ import CurveShape from "../common/curve-shape";
 import Img from "../../assets/img/covers/cover-13.jpg";
 import BlogItem from "./blog-item";
 import { useBlogsQuery } from "../../graphql/useBlogsQuery";
+import { useBlogsCategoriesQuery } from "../../graphql/useBlogsCategoriesQuery";
 
 const BlogsSection = () => {
   const { allWpPost } = useBlogsQuery();
+  const { allWpCategory } = useBlogsCategoriesQuery();
   const [blogs, setBlogs] = useState(allWpPost.nodes);
   const allBlogs = allWpPost.nodes;
   const [searchValue, setSearchValue] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
+
+  const { nodes } = allWpCategory;
 
   const projectsPerPage = 12;
   const offset = pageNumber * projectsPerPage;
@@ -33,6 +37,13 @@ const BlogsSection = () => {
     setBlogs(res);
     setPageNumber(0);
   };
+  const onCategoryChange = async (id) => {
+    const res = await allBlogs.filter(
+      (blog) => blog.categories.nodes[0].id === id
+    );
+    setPageNumber(0);
+    setBlogs(res);
+  };
 
   return (
     <>
@@ -46,12 +57,11 @@ const BlogsSection = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-7 text-center">
               <h1 className="display-2 font-weight-bold text-white">
-                Our Newsroom
+                Knowledge center
               </h1>
 
               <p className="lead mb-0 text-white-75">
-                Keep up to date with what we're working on! Landkit is an ever
-                evolving theme with regular updates.
+                Learn how to improve your business with Automation.app
               </p>
             </div>
           </div>
@@ -97,34 +107,19 @@ const BlogsSection = () => {
               <div className="row align-items-center">
                 <div className="col-auto">
                   <h6 className="font-weight-bold text-uppercase text-muted mb-0">
-                    Tags:
+                    Categories:
                   </h6>
                 </div>
                 <div className="col ml-n5">
-                  <a
-                    className="badge badge-pill badge-secondary-soft"
-                    href="blog-search.html"
-                  >
-                    <span className="h6 text-uppercase">Design</span>
-                  </a>
-                  <a
-                    className="badge badge-pill badge-secondary-soft"
-                    href="blog-search.html"
-                  >
-                    <span className="h6 text-uppercase">Product</span>
-                  </a>
-                  <a
-                    className="badge badge-pill badge-secondary-soft"
-                    href="blog-search.html"
-                  >
-                    <span className="h6 text-uppercase">UX</span>
-                  </a>
-                  <a
-                    className="badge badge-pill badge-secondary-soft"
-                    href="blog-search.html"
-                  >
-                    <span className="h6 text-uppercase">Resources</span>
-                  </a>
+                  {nodes.map((item) => (
+                    <div
+                      key={item.id}
+                      onClick={() => onCategoryChange(item.id)}
+                      className="badge badge-pill badge-secondary-soft cursor-pointer"
+                    >
+                      <span className="h6 text-uppercase">{item.name}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -151,23 +146,27 @@ const BlogsSection = () => {
 
           <div className="row justify-content-center py-7 py-md-10">
             <div className="">
-              <ReactPaginate
-                initialPage={0}
-                breakLabel={<a href="">...</a>}
-                pageCount={pageCount}
-                forcePage={pageNumber}
-                onPageChange={changePage}
-                breakClassName={"page-item"}
-                breakLinkClassName={"page-link"}
-                containerClassName={"pagination"}
-                pageClassName={"page-item"}
-                pageLinkClassName={"page-link"}
-                previousClassName={"page-item"}
-                previousLinkClassName={"page-link"}
-                nextClassName={"page-item"}
-                nextLinkClassName={"page-link"}
-                activeClassName={"active"}
-              />
+              {pageCount === 0 ? (
+                <p>No blogs to show</p>
+              ) : (
+                <ReactPaginate
+                  initialPage={0}
+                  breakLabel={<a href="">...</a>}
+                  pageCount={pageCount}
+                  forcePage={pageNumber}
+                  onPageChange={changePage}
+                  breakClassName={"page-item"}
+                  breakLinkClassName={"page-link"}
+                  containerClassName={"pagination"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item"}
+                  previousLinkClassName={"page-link"}
+                  nextClassName={"page-item"}
+                  nextLinkClassName={"page-link"}
+                  activeClassName={"active"}
+                />
+              )}
             </div>
           </div>
         </div>

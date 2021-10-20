@@ -1,15 +1,20 @@
 import React from "react";
+import Seo from "../components/common/seo";
 import { useTermsQuery } from "../graphql/useTermsQuery";
 
 const Terms = () => {
   const { wpPage } = useTermsQuery();
 
   return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: wpPage.content,
-      }}
-    />
+    <>
+      <Seo title="Terms of Service - AutomationApp" />
+
+      <div
+        dangerouslySetInnerHTML={{
+          __html: wpPage.content,
+        }}
+      />
+    </>
   );
 };
 

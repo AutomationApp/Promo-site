@@ -10,6 +10,13 @@ export const useBlogsQuery = () => {
           excerpt
           date
           uri
+          categories {
+            nodes {
+              name
+              slug
+              id
+            }
+          }
           featuredImage {
             node {
               sourceUrl

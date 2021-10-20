@@ -4,6 +4,10 @@ html {
 .footerRow {
   margin: 0 -200px;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
 @media (max-width: 1400px) {
   .footerRow {
     margin: 0 0;
