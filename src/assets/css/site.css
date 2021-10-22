@@ -39,3 +39,24 @@ html {
     margin: 0 0;
   }
 }
+
+.back1 {
+  background-image: url("../img/home/rectangle1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.back2 {
+  background-image: url("../img/home/rectangle3.svg");
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1400px) {
+  .footerRow {
+    margin: 0 0;
+  }
+  .back2 {
+    background-size: cover;
+  }
+}

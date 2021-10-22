@@ -2460,6 +2460,30 @@ fieldset:disabled a.btn {
   border-color: #2cb6fc;
   box-shadow: none;
 }
+.btn-green {
+  color: #fff;
+  background-color: #27ae60;
+  border-color: #27ae60;
+  box-shadow: none;
+}
+.btn-orange {
+  color: #fff;
+  background-color: #f2994a;
+  border-color: #f2994a;
+  box-shadow: none;
+}
+.btn-orange:hover {
+  color: #fff;
+  background-color: #f37d16;
+  border-color: #f37d16;
+}
+
+.btn-green:hover {
+  color: #fff;
+  background-color: #17c560;
+  border-color: #17c560;
+}
+
 .btn-primary:hover {
   color: #fff;
   background-color: #07a9fb;
@@ -13221,6 +13245,14 @@ a.badge-secondary-soft:hover {
 .badge-success-soft {
   background-color: rgba(66, 186, 150, 0.1);
   color: #42ba96;
+}
+.badge-orange-soft {
+  background-color: rgba(186, 164, 66, 0.1);
+  color: #f2994a;
+}
+.badge-blue-soft {
+  background-color: rgba(66, 74, 186, 0.1);
+  color: #2d9cdb;
 }
 a.badge-success-soft:focus,
 a.badge-success-soft:hover {
