@@ -1,10 +1,10 @@
 import React from "react";
 import Footer from "../footer/footer";
 import NavMenu from "../navbar";
-import { useFooterQuery } from "../../../graphql/useFooterQuery";
+import { useLayoutQuery } from "../../../graphql/useLayoutQuery";
 
 const Layout = ({ children }) => {
-  const { allWpPost, wpMenu, wpPage } = useFooterQuery();
+  const { allWpPost, wpMenu, wpPage } = useLayoutQuery();
 
   return (
     <>

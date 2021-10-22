@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const useFooterQuery = () => {
+export const useLayoutQuery = () => {
   const footerQuery = useStaticQuery(graphql`
     query MenuQuery {
       wpMenu {
@@ -15,6 +15,7 @@ export const useFooterQuery = () => {
                 label
                 menuFields {
                   description
+                  slug
                   icon {
                     sourceUrl
                   }

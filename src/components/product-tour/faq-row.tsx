@@ -17,7 +17,7 @@ const FaqRow = ({ data }) => {
   };
 
   return (
-    <div className="row mt-10">
+    <div id={data.slug} className="row mt-10">
       <div className="col-12">
         <div className="row mb-4">
           <div className="col">
@@ -27,7 +27,7 @@ const FaqRow = ({ data }) => {
           </div>
         </div>
 
-        <div className="row align-items-center">
+        <div className="row">
           <div className="col-12 col-md-6">
             <div
               className="card shadow-light-lg accordion mb-5 mb-md-6"

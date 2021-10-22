@@ -1,5 +1,6 @@
 import React from "react";
 import { useHomePageQuery } from "../../graphql/useHomeQuery";
+import MagicTrick from "../../assets/img/magic-trick.svg";
 
 const DetailsSection = () => {
   const { wpPage } = useHomePageQuery();
@@ -235,21 +236,7 @@ const DetailsSection = () => {
         </div>
       </section>
 
-      <div className="position-relative">
-        <div className="shape shape-bottom shape-fluid-x svg-shim text-dark">
-          <svg
-            viewBox="0 0 2880 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z"
-              fill="currentColor"
-            />
-          </svg>
-        </div>
-      </div>
-      <section className="py-8 py-md-11 bg-dark">
+      <section className="py-9 bg-dark position-relative">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
@@ -276,22 +263,10 @@ const DetailsSection = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      <div className="position-relative">
-        <div className="shape shape-bottom shape-fluid-x svg-shim text-gray-200">
-          <svg
-            viewBox="0 0 2880 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z"
-              fill="currentColor"
-            />
-          </svg>
+        <div className="d-none d-xl-block magicBot">
+          <img src={MagicTrick} alt="magic" width="100%" />
         </div>
-      </div>
+      </section>
     </>
   );
 };
