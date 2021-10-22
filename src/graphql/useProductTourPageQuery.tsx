@@ -14,6 +14,7 @@ export const useProductTourQuery = () => {
             id
             title
             content
+            slug
             image1 {
               sourceUrl
             }

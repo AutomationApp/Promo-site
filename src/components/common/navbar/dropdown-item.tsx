@@ -1,13 +1,21 @@
 import React from "react";
 import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const CustomDropdownItem = ({ data, navState }) => {
+  const handleScrollIntoView = (sectionId) => {
+    const titleElement = document.getElementById(sectionId);
+    titleElement.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <Link
+      <AnchorLink
+        to={`/product-tour#${data.menuFields.slug}`}
+        title="Our team"
         className="list-group-item"
+        //@ts-ignore
         onClick={() => navState()}
-        to="/product-tour"
       >
         <div className="icon icon-sm text-primary">
           <img src={data.menuFields.icon.sourceUrl} alt="icon" />
@@ -22,7 +30,7 @@ const CustomDropdownItem = ({ data, navState }) => {
             {data.menuFields.description}
           </p>
         </div>
-      </Link>
+      </AnchorLink>
     </>
   );
 };
