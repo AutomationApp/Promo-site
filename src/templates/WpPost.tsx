@@ -17,12 +17,6 @@ const BlogSection = ({ data }) => {
         imageUrl={wpPost.featuredImage.node.sourceUrl}
         pageUrl={site.siteMetadata.siteUrl + wpPost.uri}
       />
-      <section
-        data-jarallax
-        data-speed=".8"
-        className="py-12 py-md-15 bg-cover jarallax"
-        style={{ backgroundImage: `url("${BG}")` }}
-      />
 
       <section className="py-7 py-md-9 border-bottom border-gray-300" id="info">
         <div className="container">
@@ -47,7 +41,7 @@ const BlogSection = ({ data }) => {
                   <div className="avatar avatar-lg">
                     <img
                       src={wpPost.author.node.avatar.url}
-                      alt="..."
+                      alt={wpPost.author.node.name}
                       className="avatar-img rounded-circle"
                     />
                   </div>
@@ -109,7 +103,7 @@ const BlogSection = ({ data }) => {
                 <img
                   className="figure-img img-fluid rounded lift lift-lg w-100"
                   src={wpPost.featuredImage.node.sourceUrl}
-                  alt="..."
+                  alt={wpPost.title}
                 />
 
                 {/* <figcaption className="figure-caption text-center">

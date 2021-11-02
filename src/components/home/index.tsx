@@ -22,7 +22,7 @@ const NewHome = () => {
               <img
                 src={HeroImg}
                 className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
-                alt="..."
+                alt="Simple E-commerce. Automation & CRM"
                 data-aos="fade-up"
                 data-aos-delay="100"
               />
@@ -82,7 +82,7 @@ const NewHome = () => {
             <div className="col-12 col-lg-6">
               <div className="row align-items-center mb-8" data-aos="fade-up">
                 <div className="col-4 col-lg-5">
-                  <img src={Img1} alt="..." className="img-fluid" />
+                  <img src={Img1} alt="Conversations" className="img-fluid" />
                 </div>
                 <div className="col-8 col-lg-7">
                   <h3 className="font-weight-bold mb-2">Conversations</h3>
@@ -96,7 +96,7 @@ const NewHome = () => {
 
               <div className="row align-items-center mb-8" data-aos="fade-up">
                 <div className="col-4 col-lg-5">
-                  <img src={Img2} alt="..." className="img-fluid" />
+                  <img src={Img2} alt="Unified" className="img-fluid" />
                 </div>
                 <div className="col-8 col-lg-7">
                   <h3 className="font-weight-bold mb-2">Unified</h3>
@@ -111,7 +111,7 @@ const NewHome = () => {
             <div className="col-12 col-lg-6">
               <div className="row align-items-center mb-8" data-aos="fade-up">
                 <div className="col-4 col-lg-5">
-                  <img src={Img3} alt="..." className="img-fluid" />
+                  <img src={Img3} alt="Analytics" className="img-fluid" />
                 </div>
                 <div className="col-8 col-lg-7">
                   <h3 className="font-weight-bold mb-2">Analytics</h3>
@@ -125,7 +125,7 @@ const NewHome = () => {
 
               <div className="row align-items-center mb-8" data-aos="fade-up">
                 <div className="col-4 col-lg-5">
-                  <img src={Img4} alt="..." className="img-fluid" />
+                  <img src={Img4} alt="Permissions" className="img-fluid" />
                 </div>
                 <div className="col-8 col-lg-7">
                   <h3 className="font-weight-bold mb-2">Permissions</h3>
@@ -212,7 +212,7 @@ const NewHome = () => {
               <div className="row">
                 <img
                   src={detail1}
-                  alt="..."
+                  alt="Automation features"
                   className="img-fluid mb-4 rounded"
                 />
               </div>
@@ -228,7 +228,7 @@ const NewHome = () => {
               <div className="row">
                 <img
                   src={detail2}
-                  alt="..."
+                  alt="Automate"
                   className="img-fluid mb-4 rounded"
                 />
               </div>
@@ -366,11 +366,11 @@ const NewHome = () => {
                 <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
               </button>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 mt-5 md:mt-0">
               <div className="row">
                 <img
                   src={detail3}
-                  alt="..."
+                  alt="A direct connection is a good connection"
                   className="img-fluid mb-4 rounded"
                 />
               </div>
@@ -400,7 +400,7 @@ const NewHome = () => {
                       >
                         <img
                           src={Bg1}
-                          alt="..."
+                          alt="Company Logo"
                           className="img-fluid d-md-none invisible"
                         />
                       </div>

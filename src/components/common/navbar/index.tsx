@@ -32,7 +32,7 @@ const NavMenu = ({ navLinks }) => {
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <img src={Brand} className="navbar-brand-img" alt="..." />
+          <img src={Brand} className="navbar-brand-img" alt="Brand Logo" />
         </Link>
 
         <button

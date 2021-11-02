@@ -130,15 +130,6 @@ const BlogsSection = () => {
       <section className="pt-7 pt-md-10">
         <div className="container">
           <div className="row">
-            <div className="col-12">
-              <h3 className="mb-0">Popular Stories</h3>
-
-              <p className="mb-5 text-muted">
-                Here’s what’s big in the past week!
-              </p>
-            </div>
-          </div>
-          <div className="row">
             {blogs.slice(offset, offset + projectsPerPage).map((item) => (
               <BlogItem key={item.id} blog={item} />
             ))}

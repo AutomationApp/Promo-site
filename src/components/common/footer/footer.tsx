@@ -12,7 +12,7 @@ const Footer = ({ footerData, blogs }) => {
           <div className="col-12 col-sm-6 col-md-2">
             <img
               src={Brand}
-              alt="..."
+              alt="brand"
               className="footer-brand img-fluid mb-2"
             />
           </div>

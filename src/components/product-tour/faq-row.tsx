@@ -38,7 +38,7 @@ const FaqRow = ({ data }) => {
           </div>
           <div className="col-12 col-md-6">
             <div className="w-md-130">
-              <img src={imageSource} className="img-fluid" alt="..." />
+              <img src={imageSource} className="img-fluid" alt="Faqs Image" />
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const RequestDemo = () => {
                       <div className="text-center">
                         <img
                           src={Illus}
-                          alt="..."
+                          alt="Time for a demo?"
                           className="img-fluid mb-3"
                           width="200px"
                         />
