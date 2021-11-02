@@ -71,7 +71,7 @@ const FeaturesSection = () => {
             <div className="col-12 col-md-3 text-center">
               <img
                 src={features.imagesGallery[0].sourceUrl}
-                alt="..."
+                alt="features Image"
                 className="img-fluid rounded"
               />
             </div>
@@ -79,12 +79,12 @@ const FeaturesSection = () => {
               <div className="">
                 <img
                   src={features.imagesGallery[1].sourceUrl}
-                  alt="..."
+                  alt="features Image"
                   className="img-fluid rounded"
                 />
                 <img
                   src={features.imagesGallery[2].sourceUrl}
-                  alt="..."
+                  alt="features Image"
                   className="img-fluid rounded mt-5"
                 />
               </div>
@@ -92,7 +92,7 @@ const FeaturesSection = () => {
             <div className="col-12 col-md-3 text-center">
               <img
                 src={features.imagesGallery[3].sourceUrl}
-                alt="..."
+                alt="features Image"
                 className="img-fluid rounded"
               />
             </div>
@@ -121,7 +121,7 @@ const FeaturesSection = () => {
                   >
                     <img
                       src={features.easyIntegration.image.sourceUrl}
-                      alt="..."
+                      alt={features.easyIntegration.title}
                       className="img-fluid d-md-none invisible"
                     />
 
@@ -142,7 +142,7 @@ const FeaturesSection = () => {
                     <div className="card-body">
                       <img
                         src={features.easyIntegration.icon.sourceUrl}
-                        alt="icon1"
+                        alt={features.easyIntegration.title}
                         className="text-center mb-3"
                         width="40px"
                       />
@@ -166,7 +166,7 @@ const FeaturesSection = () => {
                   >
                     <img
                       src={features.automationEngine.image.sourceUrl}
-                      alt="..."
+                      alt={features.automationEngine.title}
                       className="img-fluid d-md-none invisible"
                     />
 
@@ -187,7 +187,7 @@ const FeaturesSection = () => {
                     <div className="card-body">
                       <img
                         src={features.automationEngine.icon.sourceUrl}
-                        alt="icon1"
+                        alt={features.automationEngine.title}
                         className="text-center mb-3"
                         width="40px"
                       />
@@ -214,7 +214,7 @@ const FeaturesSection = () => {
                   >
                     <img
                       src={features.clientLists.image.sourceUrl}
-                      alt="..."
+                      alt={features.clientLists.title}
                       className="img-fluid d-md-none invisible"
                     />
                     <div className="shape shape-left shape-fluid-y svg-shim text-white d-none d-md-block">
@@ -234,7 +234,7 @@ const FeaturesSection = () => {
                     <div className="card-body">
                       <img
                         src={features.clientLists.icon.sourceUrl}
-                        alt="icon1"
+                        alt={features.clientLists.title}
                         className="text-center mb-3"
                         width="40px"
                       />
@@ -258,7 +258,7 @@ const FeaturesSection = () => {
                   >
                     <img
                       src={features.userManagement.image.sourceUrl}
-                      alt="..."
+                      alt={features.userManagement.title}
                       className="img-fluid d-md-none invisible"
                     />
                     <div className="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
@@ -278,7 +278,7 @@ const FeaturesSection = () => {
                     <div className="card-body">
                       <img
                         src={features.userManagement.icon.sourceUrl}
-                        alt="icon1"
+                        alt={features.userManagement.title}
                         className="text-center mb-3"
                         width="40px"
                       />

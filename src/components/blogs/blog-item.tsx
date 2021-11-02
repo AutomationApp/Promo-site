@@ -9,7 +9,7 @@ const BlogItem = ({ blog }) => {
         <div className="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
           <img
             src={blog.featuredImage.node.sourceUrl}
-            alt="..."
+            alt={blog.title}
             className="card-img-top "
           />
 
@@ -51,7 +51,7 @@ const BlogItem = ({ blog }) => {
             <div className="avatar avatar-sm mr-2">
               <img
                 src={blog.author.node.avatar.url}
-                alt="..."
+                alt={blog.author.node.name}
                 className="avatar-img rounded-circle"
               />
             </div>

@@ -4,7 +4,12 @@ const CardItem = ({ data }) => {
   return (
     <div className="col-12 col-md-4 text-center">
       <div className="mb-3">
-        <img src={data.image} width="150px" alt="..." className="img-fluid" />
+        <img
+          src={data.image}
+          width="150px"
+          alt={data.title}
+          className="img-fluid"
+        />
       </div>
 
       <h3>{data.title}</h3>
