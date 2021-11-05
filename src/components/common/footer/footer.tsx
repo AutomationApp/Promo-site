@@ -25,7 +25,7 @@ const Footer = ({ footerData, blogs }) => {
             <ul className="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
               {footerData.firstMenu.map((item) => (
                 <li className="mb-3">
-                  <Link to={item.url} className="text-reset">
+                  <Link to={item.url} title={item.title} className="text-reset">
                     {item.title}
                   </Link>
                 </li>
@@ -38,7 +38,7 @@ const Footer = ({ footerData, blogs }) => {
             <ul className="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
               {footerData.secondMenu.map((item) => (
                 <li className="mb-3">
-                  <Link to={item.url} className="text-reset">
+                  <Link to={item.url} title={item.title} className="text-reset">
                     {item.title}
                   </Link>
                 </li>

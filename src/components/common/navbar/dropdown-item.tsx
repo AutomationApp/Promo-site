@@ -6,7 +6,7 @@ const CustomDropdownItem = ({ data, navState }) => {
     <>
       <AnchorLink
         to={`/product-tour#${data.menuFields.slug}`}
-        title="Our team"
+        title={data.label}
         className="list-group-item"
         //@ts-ignore
         onClick={() => navState()}
