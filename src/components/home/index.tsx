@@ -235,7 +235,7 @@ const NewHome = () => {
             </div>
             <div className="col-12 col-md-6 col-lg-5">
               <span className="badge badge-pill badge-blue-soft mb-3">
-                <span className="h6 text-uppercase">Automate</span>
+                <span className="h6 text-uppercase">Overview</span>
               </span>
 
               <h2>
