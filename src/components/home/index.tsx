@@ -1,13 +1,13 @@
 import React from "react";
-import HeroImg from "../../assets/img/home/home1.png";
+import HeroImg from "../../assets/img/home/home1.svg";
 import Img1 from "../../assets/img/illustrations/illustration-4.png";
 import Img2 from "../../assets/img/illustrations/illustration-8.png";
 import Img3 from "../../assets/img/illustrations/illustration-7.png";
 import Img4 from "../../assets/img/illustrations/illustration-6.png";
 import Bg1 from "../../assets/img/photos/photo-1.jpg";
-import detail1 from "../../assets/img/home/detail1.png";
-import detail2 from "../../assets/img/home/detail2.png";
-import detail3 from "../../assets/img/home/detail3.png";
+import detail1 from "../../assets/img/home/detail1.svg";
+import detail2 from "../../assets/img/home/detail2.svg";
+import detail3 from "../../assets/img/home/detail3.svg";
 import Testimonials from "./testimonials";
 import RequestDemo from "./request-demo";
 import PricingSection from "./pricing";
@@ -21,7 +21,7 @@ const NewHome = () => {
             <div className="col-12 col-md-5 col-lg-6 order-md-2">
               <img
                 src={HeroImg}
-                className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
+                className="img-fluid "
                 alt="Simple E-commerce. Automation & CRM"
                 data-aos="fade-up"
                 data-aos-delay="100"

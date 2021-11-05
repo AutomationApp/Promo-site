@@ -5,6 +5,7 @@ import Img from "../../assets/img/covers/cover-13.jpg";
 import BlogItem from "./blog-item";
 import { useBlogsQuery } from "../../graphql/useBlogsQuery";
 import { useBlogsCategoriesQuery } from "../../graphql/useBlogsCategoriesQuery";
+import CaseStudies from "../common/case-studies";
 
 const BlogsSection = () => {
   const { allWpPost } = useBlogsQuery();
@@ -162,6 +163,8 @@ const BlogsSection = () => {
           </div>
         </div>
       </section>
+
+      {/* <CaseStudies /> */}
     </>
   );
 };
