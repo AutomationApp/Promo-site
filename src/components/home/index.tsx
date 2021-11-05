@@ -4,13 +4,31 @@ import Img1 from "../../assets/img/illustrations/illustration-4.png";
 import Img2 from "../../assets/img/illustrations/illustration-8.png";
 import Img3 from "../../assets/img/illustrations/illustration-7.png";
 import Img4 from "../../assets/img/illustrations/illustration-6.png";
-import Bg1 from "../../assets/img/photos/photo-1.jpg";
 import detail1 from "../../assets/img/home/detail1.svg";
 import detail2 from "../../assets/img/home/detail2.svg";
 import detail3 from "../../assets/img/home/detail3.svg";
-import Testimonials from "./testimonials";
 import RequestDemo from "./request-demo";
 import PricingSection from "./pricing";
+import NextArrow from "../common/NextArrow";
+import PrevArrow from "../common/PrevArrow";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Testimonials from "./testimonials";
+
+const settings = {
+  // dots: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  autoplay: true,
+  // autoplaySpeed: 5000,
+  // speed: 2000,
+  // initialSlide: 1,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+};
 
 const NewHome = () => {
   return (
@@ -388,44 +406,11 @@ const NewHome = () => {
               </p>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12">
-              <div className="card card-row shadow-light-lg mb-6">
-                <div className="row no-gutters">
-                  <div className="col-12 col-md-6">
-                    <div className="card-img-slider">
-                      <div
-                        className="card-img-left w-100 bg-cover"
-                        style={{ backgroundImage: `url("${Bg1}")` }}
-                      >
-                        <img
-                          src={Bg1}
-                          alt="Company Logo"
-                          className="img-fluid d-md-none invisible"
-                        />
-                      </div>
-                    </div>
 
-                    <div className="shape shape-right shape-fluid-y svg-shim text-white d-none d-md-block">
-                      <svg
-                        viewBox="0 0 112 690"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M116 0H51v172C76 384 0 517 0 517v173h116V0z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-6 position-md-static">
-                    <Testimonials />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Slider {...settings}>
+            <Testimonials />
+            <Testimonials />
+          </Slider>
         </div>
       </section>
 

@@ -5,7 +5,26 @@ import Img from "../../assets/img/covers/cover-13.jpg";
 import BlogItem from "./blog-item";
 import { useBlogsQuery } from "../../graphql/useBlogsQuery";
 import { useBlogsCategoriesQuery } from "../../graphql/useBlogsCategoriesQuery";
-// import CaseStudies from "../common/case-studies";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CaseStudyItem from "./case-studies-item";
+import PrevArrow from "../common/PrevArrow";
+import NextArrow from "../common/NextArrow";
+
+const settings = {
+  // dots: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  autoplay: true,
+  // autoplaySpeed: 5000,
+  // speed: 2000,
+  // initialSlide: 1,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+};
 
 const BlogsSection = () => {
   const { allWpPost } = useBlogsQuery();
@@ -164,7 +183,30 @@ const BlogsSection = () => {
         </div>
       </section>
 
-      {/* <CaseStudies /> */}
+      <section className="pt-7 pt-md-10">
+        <div className="container">
+          <div className="row align-items-center mb-5">
+            <div className="col-12 col-md">
+              <h3 className="mb-0">Case Studies</h3>
+
+              <p className="mb-0 text-muted">In-depth looks at our work.</p>
+            </div>
+            <div className="col-12 col-md-auto">
+              <a
+                href="#!"
+                className="btn btn-sm btn-outline-gray-300 d-none d-md-inline"
+              >
+                View all
+              </a>
+            </div>
+          </div>
+
+          <Slider {...settings}>
+            <CaseStudyItem />
+            <CaseStudyItem />
+          </Slider>
+        </div>
+      </section>
     </>
   );
 };

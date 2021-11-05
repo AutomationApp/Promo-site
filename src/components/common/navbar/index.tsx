@@ -31,7 +31,7 @@ const NavMenu = ({ navLinks }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" title="Home" to="/">
           <img src={Brand} className="navbar-brand-img" alt="Brand Logo" />
         </Link>
 
@@ -90,6 +90,7 @@ const NavMenu = ({ navLinks }) => {
                           : "nav-link"
                       }
                       onClick={changeNavbarState}
+                      title={item.label}
                       to={item.path}
                     >
                       {item.label}
@@ -125,6 +126,7 @@ const NavMenu = ({ navLinks }) => {
               to="https://automation.app/app/login"
               className="navbar-btn btn btn-sm btn-outline-primary lift mr-2"
               target="_blank"
+              title="Sign In"
               onClick={() => setNavbarMenu(false)}
             >
               Sign in
@@ -133,6 +135,7 @@ const NavMenu = ({ navLinks }) => {
               to="https://automation.app/app/register"
               className="navbar-btn btn btn-sm btn-primary lift"
               target="_blank"
+              title="Get Started"
               onClick={() => setNavbarMenu(false)}
             >
               Get started

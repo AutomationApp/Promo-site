@@ -5,7 +5,11 @@ import { Link } from "gatsby";
 const BlogItem = ({ blog }) => {
   return (
     <div className="col-12 col-md-6 col-lg-4 d-flex mt-5">
-      <Link to={blog.uri} className="card-img-top text-decoration-none">
+      <Link
+        title={blog.title}
+        to={blog.uri}
+        className="card-img-top text-decoration-none"
+      >
         <div className="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
           <img
             src={blog.featuredImage.node.sourceUrl}
