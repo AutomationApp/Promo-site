@@ -9,6 +9,9 @@ export const useProductTourQuery = () => {
             id
             title
             description
+            icon {
+              sourceUrl
+            }
           }
           productTourData {
             id

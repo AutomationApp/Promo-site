@@ -1,7 +1,7 @@
 import React from "react";
 import Illus from "../../assets/img/illustrations/illustration-1.png";
 
-const RequestDemo = () => {
+const RequestDemo = ({ demoForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -20,7 +20,7 @@ const RequestDemo = () => {
                     <div className="col-12 col-xl-11">
                       <div className="text-center">
                         <img
-                          src={Illus}
+                          src={demoForm.image.sourceUrl}
                           alt="Time for a demo?"
                           className="img-fluid mb-3"
                           width="200px"
@@ -28,11 +28,11 @@ const RequestDemo = () => {
                       </div>
 
                       <h2 className="font-weight-bold text-center mb-1">
-                        Time for a demo?
+                        {demoForm.title}
                       </h2>
 
                       <p className="font-size-lg text-center text-muted mb-6 mb-md-8">
-                        A meeting to go over your requirements and solutions{" "}
+                        {demoForm.subtitle}
                       </p>
 
                       <form onSubmit={handleSubmit}>

@@ -4,20 +4,8 @@ const Steps = ({ step }) => {
   return (
     <div className="col-12 col-md-4 mt-md-10">
       <div className="row">
-        <div className="col-auto col-md-12">
-          <div className="row no-gutters align-items-center mb-md-1">
-            <div className="col-auto">
-              <a
-                href="#!"
-                className="btn btn-sm btn-rounded-circle btn-gray-400 disabled opacity-1"
-              >
-                <span>{step.id}</span>
-              </a>
-            </div>
-            <div className="col">
-              <hr className="d-none d-md-block mr-n7" />
-            </div>
-          </div>
+        <div className="col-auto col-md-12 mb-md-1">
+          <img src={step.icon.sourceUrl} alt={step.title} width="50px" />
         </div>
         <div className="col col-md-12 ml-n5 ml-md-0">
           <h3>{step.title}</h3>

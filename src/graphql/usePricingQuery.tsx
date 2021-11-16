@@ -11,7 +11,7 @@ export const usePricingQuery = () => {
             title
             subtitle
           }
-          pricing {
+          pricingCards {
             starter {
               title
               price
