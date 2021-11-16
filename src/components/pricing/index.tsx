@@ -55,7 +55,7 @@ const PricingSection = () => {
 
       <CurveShape />
 
-      <Pricing pricing={pricing.pricing} />
+      <Pricing pricing={pricing.pricingCards} />
 
       <section className="pt-10">
         <div className="container">
