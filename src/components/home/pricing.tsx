@@ -1,21 +1,18 @@
 import { Link } from "gatsby";
 import React from "react";
-import { HomeFaqs } from "../../utils/constants";
 
-const PricingSection = () => {
+const PricingSection = ({ pricing }) => {
+  const { pricingCard } = pricing;
+  const { priceCard2 } = pricing;
   return (
     <>
       <section className="pt-9 bg-gray-200">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h1>Fair, simple pricing for all sizes.</h1>
+              <h1>{pricing.title}</h1>
 
-              <p className="lead text-gray-700">
-                Get started for free, no credit card needed. We promise - you’ll
-                see your orders in the system and start automation within 10
-                minutes from opening your account.
-              </p>
+              <p className="lead text-gray-700">{pricing.description}</p>
             </div>
           </div>
           <div className="row align-items-center no-gutters pt-5">
@@ -30,62 +27,38 @@ const PricingSection = () => {
                       <div className="text-center mb-5">
                         <span className="badge badge-pill badge-primary-soft">
                           <span className="h6 font-weight-bold text-uppercase">
-                            Standard
+                            {pricingCard.tag}
                           </span>
                         </span>
                       </div>
 
-                      <div className="d-flex justify-content-center">
+                      <div className="d-flex justify-content-center mb-6 mb-md-8">
                         <span className="h2 mb-0 mt-2">$</span>
                         <span
                           className="price display-2 mb-0"
                           data-annual="29"
                           data-monthly="49"
                         >
-                          9
+                          {pricingCard.price}
                         </span>
-                        <span className="h2 align-self-end mb-1">/mo</span>
+                        <span className="h2 align-self-end mb-1">
+                          /{pricingCard.time}
+                        </span>
                       </div>
 
-                      <p className="text-center text-muted mb-6 mb-md-8">
+                      {/* <p className="text-center text-muted mb-6 mb-md-8">
                         250 activities
-                      </p>
+                      </p> */}
 
-                      <div className="d-flex">
-                        <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                          <i className="fe fe-check"></i>
+                      {pricingCard.packageIncludes.map((item) => (
+                        <div className="d-flex" key={item.title}>
+                          <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
+                            <i className="fe fe-check"></i>
+                          </div>
+
+                          <p>{item.title}</p>
                         </div>
-
-                        <p>CRM, Marketing lists & Audiences</p>
-                      </div>
-                      <div className="d-flex">
-                        <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                          <i className="fe fe-check"></i>
-                        </div>
-
-                        <p>Marketing Automation & tagging</p>
-                      </div>
-                      <div className="d-flex">
-                        <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                          <i className="fe fe-check"></i>
-                        </div>
-
-                        <p>Order control & Overview</p>
-                      </div>
-                      <div className="d-flex">
-                        <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                          <i className="fe fe-check"></i>
-                        </div>
-
-                        <p>Send Email, SMS etc.</p>
-                      </div>
-                      <div className="d-flex">
-                        <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
-                          <i className="fe fe-check"></i>
-                        </div>
-
-                        <p className="mb-0">All features: Teamwork etc.</p>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -110,15 +83,13 @@ const PricingSection = () => {
                       <p className="text-center mb-8 mb-md-11">
                         <span className="badge badge-pill badge-primary-soft">
                           <span className="h6 font-weight-bold text-uppercase">
-                            Partner | Pro | dedicated | enterprise
+                            {priceCard2.tag}
                           </span>
                         </span>
                       </p>
 
                       <p className="lead text-center text-muted mb-0 mb-md-10">
-                        We offer variable pricing with discounts for larger
-                        organizations of 40+ employees. Get in touch with us and
-                        we’ll figure out something that works for everyone.
+                        {priceCard2.description}
                       </p>
                     </div>
                   </div>
@@ -149,28 +120,6 @@ const PricingSection = () => {
           </svg>
         </div>
       </div>
-
-      <section className="pt-15 pb-12 bg-dark">
-        <div className="container pt-8 pt-md-11">
-          <div className="row">
-            {HomeFaqs.map((item) => (
-              <div className="col-12 col-md-6">
-                <div className="d-flex">
-                  <div className="badge badge-lg badge-rounded-circle badge-success">
-                    <span>?</span>
-                  </div>
-
-                  <div className="ml-5">
-                    <h4 className="text-white">{item.title}</h4>
-
-                    <p className="text-muted mb-6 mb-md-8">{item.content}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 };

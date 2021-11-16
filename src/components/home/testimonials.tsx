@@ -1,7 +1,6 @@
 import React from "react";
-import Bg1 from "../../assets/img/photos/photo-1.jpg";
 
-const Testimonials = () => {
+const Testimonials = ({ data }) => {
   return (
     <div className="row">
       <div className="col-12">
@@ -11,10 +10,10 @@ const Testimonials = () => {
               <div className="card-img-slider">
                 <div
                   className="card-img-left w-100 bg-cover"
-                  style={{ backgroundImage: `url("${Bg1}")` }}
+                  style={{ backgroundImage: `url("${data.image.sourceUrl}")` }}
                 >
                   <img
-                    src={Bg1}
+                    src={data.logo.sourceUrl}
                     alt="Company Logo"
                     className="img-fluid d-md-none invisible"
                   />
@@ -62,14 +61,10 @@ const Testimonials = () => {
                         </div>
                       </div>
 
-                      <p className="mb-5 mb-md-7">
-                        “Landkit is hands down the most useful front end
-                        Bootstrap theme I've ever used. I can't wait to use it
-                        again for my next project.”
-                      </p>
+                      <p className="mb-5 mb-md-7">“{data.review}”</p>
 
                       <footer className="blockquote-footer">
-                        <span className="h6 text-uppercase">Dave Gamache</span>
+                        <span className="h6 text-uppercase">{data.author}</span>
                       </footer>
                     </blockquote>
                   </div>
