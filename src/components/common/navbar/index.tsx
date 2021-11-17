@@ -123,7 +123,7 @@ const NavMenu = ({ navLinks }) => {
 
           <div className="ml-auto flex">
             <Link
-              to="https://automation.app/app/login"
+              to="https://app.automation.app/login"
               className="navbar-btn btn btn-sm btn-outline-primary lift mr-2"
               target="_blank"
               title="Sign In"
@@ -132,7 +132,7 @@ const NavMenu = ({ navLinks }) => {
               Sign in
             </Link>
             <Link
-              to="https://automation.app/app/register"
+              to="https://app.automation.app/register"
               className="navbar-btn btn btn-sm btn-primary lift"
               target="_blank"
               title="Get Started"
