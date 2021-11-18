@@ -33,5 +33,16 @@ module.exports = {
         useACF: true,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-5ZWGLD2",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+        // Defaults to false
+        enableWebVitalsTracking: true,
+      },
+    },
+    `gatsby-plugin-client-side-redirect`, // keep it in last in list
   ],
 };
