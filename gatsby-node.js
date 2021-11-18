@@ -43,8 +43,6 @@ exports.createPages = async function ({ actions, graphql }) {
   const { allWpRedirect } = result?.data;
   const { createRedirect } = actions;
 
-  console.log(allWpRedirect.nodes);
-
   allWpRedirect.nodes.map((redirect) =>
     createRedirect({
       fromPath: `/${redirect.slug}`,
