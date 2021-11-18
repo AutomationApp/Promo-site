@@ -25,3 +25,29 @@ exports.createPages = async function ({ actions, graphql, reporter }) {
     });
   });
 };
+
+exports.createPages = async function ({ actions, graphql }) {
+  const result = await graphql(`
+    {
+      allWpRedirect {
+        nodes {
+          slug
+          redirects {
+            redirectsUrl
+          }
+        }
+      }
+    }
+  `);
+
+  const { allWpRedirect } = result?.data;
+  const { createRedirect } = actions;
+
+  allWpRedirect.nodes.map((redirect) =>
+    createRedirect({
+      fromPath: `/${redirect.slug}`,
+      toPath: `${redirect.redirects.redirectsUrl}`,
+      isPermanent: true,
+    })
+  );
+};
