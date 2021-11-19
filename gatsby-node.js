@@ -24,10 +24,9 @@ exports.createPages = async function ({ actions, graphql, reporter }) {
       context: post,
     });
   });
-};
 
-exports.createPages = async function ({ actions, graphql }) {
-  const result = await graphql(`
+
+  const redirectsResult = await graphql(`
     {
       allWpRedirect {
         nodes {
@@ -40,7 +39,7 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   `);
 
-  const { allWpRedirect } = result?.data;
+  const { allWpRedirect } = redirectsResult?.data;
   const { createRedirect } = actions;
 
   allWpRedirect.nodes.map((redirect) =>
