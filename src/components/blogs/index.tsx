@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CaseStudyItem from "./case-studies-item";
 import PrevArrow from "../common/PrevArrow";
 import NextArrow from "../common/NextArrow";
+import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";
 
 const settings = {
   // dots: true,
@@ -29,6 +30,8 @@ const settings = {
 const BlogsSection = () => {
   const { allWpPost } = useBlogsQuery();
   const { allWpCategory } = useBlogsCategoriesQuery();
+  const { allWpCaseStudy } = useCaseStudiesQuery();
+
   const [blogs, setBlogs] = useState(allWpPost.nodes);
   const allBlogs = allWpPost.nodes;
   const [searchValue, setSearchValue] = useState("");
@@ -58,6 +61,7 @@ const BlogsSection = () => {
     setPageNumber(0);
   };
   const onCategoryChange = async (id) => {
+    console.log(allBlogs);
     const res = await allBlogs.filter(
       (blog) => blog.categories.nodes[0].id === id
     );
@@ -105,8 +109,8 @@ const BlogsSection = () => {
                   <input
                     type="text"
                     className="form-control border-0 px-1"
-                    aria-label="Search our blog..."
-                    placeholder="Search our blog..."
+                    aria-label="Search our knowledge center and helpdesk ..."
+                    placeholder="Search our knowledge center and helpdesk ..."
                     onKeyDown={onSearch}
                     onChange={(e) => setSearchValue(e.target.value)}
                   />
@@ -202,8 +206,9 @@ const BlogsSection = () => {
           </div>
 
           <Slider {...settings}>
-            <CaseStudyItem />
-            <CaseStudyItem />
+            {allWpCaseStudy.nodes.map((item) => (
+              <CaseStudyItem key={item.id} data={item} />
+            ))}
           </Slider>
         </div>
       </section>

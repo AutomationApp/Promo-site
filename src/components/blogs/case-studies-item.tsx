@@ -1,9 +1,7 @@
 import React from "react";
-import Img1 from "../../assets/img/photos/photo-26.jpg";
-import Img2 from "../../assets/img/photos/photo-1.jpg";
-import AvatarImg from "../../assets/img/avatars/avatar-2.jpg";
+import moment from "moment";
 
-const CaseStudyItem = () => {
+const CaseStudyItem = ({ data }) => {
   return (
     <div className="row">
       <div className="col-12">
@@ -13,10 +11,12 @@ const CaseStudyItem = () => {
               <div className="card-img-slider">
                 <div
                   className="card-img-left w-100 bg-cover"
-                  style={{ backgroundImage: `url("${Img1}")` }}
+                  style={{
+                    backgroundImage: `url("${data.caseStudies.caseStudies.image.sourceUrl}")`,
+                  }}
                 >
                   <img
-                    src={Img1}
+                    src={data.caseStudies.caseStudies.image.sourceUrl}
                     alt="Company Logo"
                     className="img-fluid d-md-none invisible"
                   />
@@ -44,16 +44,10 @@ const CaseStudyItem = () => {
                   <div className="flickity-slider">
                     <div className="w-100 is-selected">
                       <a className="card-body" href="#!">
-                        <h3>
-                          Spending Time Outside the Office with Coworkers Is
-                          Great for Productivity.
-                        </h3>
+                        <h3>{data.caseStudies.caseStudies.title}</h3>
 
                         <p className="mb-0 text-muted">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Duis nec condimentum quam. Fusce pellentesque
-                          faucibus lorem at viverra. Integer at feugiat odio. In
-                          placerat euismod risus proin erat purus.
+                          {data.caseStudies.caseStudies.description}
                         </p>
                       </a>
 
@@ -62,18 +56,20 @@ const CaseStudyItem = () => {
 
                         <div className="avatar avatar-sm mr-2">
                           <img
-                            src={AvatarImg}
+                            src={data.author.node.avatar.url}
                             alt="Person"
                             className="avatar-img rounded-circle"
                           />
                         </div>
 
                         <h6 className="text-uppercase text-muted mr-2 mb-0">
-                          Adolfo Hess
+                          {data.author.node.name}
                         </h6>
 
                         <p className="h6 text-uppercase text-muted mb-0 ml-auto">
-                          <time dateTime="2019-05-02">May 02</time>
+                          <time dateTime="2019-05-02">
+                            {moment(data.date).format("MMM d")}
+                          </time>
                         </p>
                       </div>
                     </div>
