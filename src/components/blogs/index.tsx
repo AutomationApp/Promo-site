@@ -34,6 +34,7 @@ const BlogsSection = ({ allWpPost }) => {
   const allBlogs = allWpPost.nodes;
   const [searchValue, setSearchValue] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const { nodes } = allWpCategory;
 
@@ -59,12 +60,12 @@ const BlogsSection = ({ allWpPost }) => {
     setPageNumber(0);
   };
   const onCategoryChange = async (id) => {
-    console.log(allBlogs);
-    const res = await allBlogs.filter(
-      (blog) => blog.categories.nodes[0].id === id
+    const res = await allBlogs.filter((blog) =>
+      blog.categories.nodes.find((item) => item.id === id)
     );
     setPageNumber(0);
     setBlogs(res);
+    setSelectedCategory(id);
   };
 
   return (
@@ -137,7 +138,12 @@ const BlogsSection = ({ allWpPost }) => {
                     <div
                       key={item.id}
                       onClick={() => onCategoryChange(item.id)}
-                      className="badge badge-pill badge-secondary-soft cursor-pointer"
+                      className={`badge badge-pill 
+                      ${
+                        selectedCategory === item.id
+                          ? " badge-primary"
+                          : "badge-secondary-soft"
+                      } cursor-pointer`}
                     >
                       <span className="h6 text-uppercase">{item.name}</span>
                     </div>
