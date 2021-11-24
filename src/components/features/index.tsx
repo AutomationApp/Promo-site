@@ -2,10 +2,8 @@ import React from "react";
 import CurveShape from "../common/curve-shape";
 import AutomationPoints from "../common/automation-points";
 import TalkSection from "../common/talk-section";
-import { useFeaturesQuery } from "../../graphql/useFeaturesQuery";
 
-const FeaturesSection = () => {
-  const { wpPage } = useFeaturesQuery();
+const FeaturesSection = ({ wpPage }) => {
   const { features } = wpPage;
 
   return (

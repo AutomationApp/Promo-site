@@ -54,6 +54,11 @@ export const useFeaturesQuery = () => {
             }
           }
         }
+        seo {
+          title
+          canonical
+          metaDesc
+        }
       }
     }
   `);

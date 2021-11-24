@@ -7,7 +7,11 @@ const Privacy = () => {
 
   return (
     <>
-      <Seo title="Privacy policy - AutomationApp" />
+      <Seo
+        title={wpPage.seo.title}
+        description={wpPage.seo.metaDesc}
+        pageUrl={wpPage.seo.canonical}
+      />
       <div
         dangerouslySetInnerHTML={{
           __html: wpPage.content,

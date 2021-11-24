@@ -4,10 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://philipleth.vercel.app/",
+    siteUrl: "https://automation.app/",
     title: "Automate your E-commerce store - AutomationApp",
     description: `Automate your e-commerce businesses. E-mail, SMS marketing automation and any customised e-commerce flow with deep e-commerce platform integration`,
-    author: `@shahrukh`,
+    author: `Automation App`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

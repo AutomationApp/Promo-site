@@ -7,7 +7,11 @@ const Terms = () => {
 
   return (
     <>
-      <Seo title="Terms of Service - AutomationApp" />
+      <Seo
+        title={wpPage.seo.title}
+        description={wpPage.seo.metaDesc}
+        pageUrl={wpPage.seo.canonical}
+      />
 
       <div
         dangerouslySetInnerHTML={{

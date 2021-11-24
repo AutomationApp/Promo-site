@@ -32,6 +32,13 @@ export const useBlogsQuery = () => {
           }
         }
       }
+      wpPage(title: { eq: "Knowledge center" }) {
+        seo {
+          title
+          canonical
+          metaDesc
+        }
+      }
     }
   `);
   return blogs;

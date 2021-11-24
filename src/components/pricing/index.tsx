@@ -3,10 +3,9 @@ import Faqs from "../common/faqs";
 import Pricing from "../common/pricing";
 import CurveShape from "../../components/common/curve-shape";
 import TalkSection from "../common/talk-section";
-import { usePricingQuery } from "../../graphql/usePricingQuery";
+import { Link } from "gatsby";
 
-const PricingSection = () => {
-  const { wpPage } = usePricingQuery();
+const PricingSection = ({ wpPage }) => {
   const { pricing } = wpPage;
 
   return (
@@ -74,9 +73,11 @@ const PricingSection = () => {
 
               <div className="row justify-content-center mb-5">
                 <div className="col-auto">
-                  <button type="submit" className="btn btn-primary lift">
-                    Get started free
-                  </button>
+                  <Link to="https://app.automation.app/register">
+                    <button type="submit" className="btn btn-primary lift">
+                      Get started free
+                    </button>
+                  </Link>
                 </div>
               </div>
               <p

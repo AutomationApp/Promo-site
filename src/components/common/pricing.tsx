@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 const Pricing = ({ pricing }) => {
@@ -41,10 +42,13 @@ const Pricing = ({ pricing }) => {
                   ))}
                 </div>
 
-                <a href="#!" className="btn btn-block btn-primary-soft">
+                <Link
+                  to="https://app.automation.app/register"
+                  className="btn btn-block btn-primary-soft"
+                >
                   {pricing.starter.buttonText}{" "}
                   <i className="fe fe-arrow-right ml-3"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -85,10 +89,13 @@ const Pricing = ({ pricing }) => {
                   ))}
                 </div>
 
-                <a href="#!" className="btn btn-block btn-primary">
+                <Link
+                  to="https://app.automation.app/register"
+                  className="btn btn-block btn-primary"
+                >
                   {pricing.growth.buttonText}{" "}
                   <i className="fe fe-arrow-right ml-3"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -129,10 +136,13 @@ const Pricing = ({ pricing }) => {
                   ))}
                 </div>
 
-                <a href="#!" className="btn btn-block btn-primary-soft">
+                <Link
+                  to="https://app.automation.app/register"
+                  className="btn btn-block btn-primary-soft"
+                >
                   {pricing.premium.buttonText}{" "}
                   <i className="fe fe-arrow-right ml-3"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

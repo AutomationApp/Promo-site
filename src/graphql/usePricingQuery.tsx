@@ -54,6 +54,11 @@ export const usePricingQuery = () => {
             }
           }
         }
+        seo {
+          title
+          canonical
+          metaDesc
+        }
       }
     }
   `);

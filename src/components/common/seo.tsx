@@ -1,37 +1,19 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
 
-function Seo({ description, lang, meta, title, imageUrl, pageUrl }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  );
-
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
-
+function Seo({ description, lang, meta, title, imageUrl, pageUrl, author }) {
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={title ? `%s | ${title}` : null}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -39,7 +21,7 @@ function Seo({ description, lang, meta, title, imageUrl, pageUrl }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:image`,
@@ -59,7 +41,7 @@ function Seo({ description, lang, meta, title, imageUrl, pageUrl }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: author,
         },
         {
           name: `twitter:title`,
@@ -67,7 +49,7 @@ function Seo({ description, lang, meta, title, imageUrl, pageUrl }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />
@@ -77,10 +59,11 @@ function Seo({ description, lang, meta, title, imageUrl, pageUrl }) {
 Seo.defaultProps = {
   lang: `en`,
   meta: [],
-  title: ``,
-  description: ``,
+  title: `Automate your E-commerce store - AutomationApp`,
+  description: `Automate your e-commerce businesses. E-mail, SMS marketing automation and any customised e-commerce flow with deep e-commerce platform integration`,
   imageUrl: ``,
-  pageUrl: ``,
+  pageUrl: `https://automation.app/`,
+  author: `Automation App`,
 };
 
 Seo.propTypes = {
@@ -90,6 +73,7 @@ Seo.propTypes = {
   title: PropTypes.string,
   imageUrl: PropTypes.string,
   pageUrl: PropTypes.string,
+  author: PropTypes.string,
 };
 
 export default Seo;

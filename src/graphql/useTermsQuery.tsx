@@ -5,6 +5,11 @@ export const useTermsQuery = () => {
     {
       wpPage(title: { eq: "terms" }) {
         content
+        seo {
+          title
+          canonical
+          metaDesc
+        }
       }
     }
   `);

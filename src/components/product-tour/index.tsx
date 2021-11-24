@@ -1,7 +1,6 @@
 import React from "react";
 import FaqRow from "./faq-row";
 import Steps from "./steps";
-import { useProductTourQuery } from "../../graphql/useProductTourPageQuery";
 import CurveShape from "../common/curve-shape";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,8 +9,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ProductTourSection = () => {
-  const { wpPage } = useProductTourQuery();
+const ProductTourSection = ({ wpPage }) => {
   const { productTour } = wpPage;
 
   const handleScrollIntoView = (sectionId) => {

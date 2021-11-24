@@ -5,6 +5,11 @@ export const usePrivacyQuery = () => {
     {
       wpPage(title: { eq: "privacy" }) {
         content
+        seo {
+          title
+          canonical
+          metaDesc
+        }
       }
     }
   `);

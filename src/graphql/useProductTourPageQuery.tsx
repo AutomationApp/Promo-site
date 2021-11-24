@@ -38,6 +38,11 @@ export const useProductTourQuery = () => {
             }
           }
         }
+        seo {
+          title
+          canonical
+          metaDesc
+        }
       }
     }
   `);

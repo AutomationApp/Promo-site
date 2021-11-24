@@ -8,14 +8,15 @@ import { graphql } from "gatsby";
 import Seo from "../components/common/seo";
 
 const BlogSection = ({ data }) => {
-  const { wpPost, site } = data;
+  const { wpPost } = data;
 
   return (
     <>
       <Seo
-        title={wpPost.title}
+        title={wpPost.seo.title}
+        description={wpPost.seo.metaDesc}
+        pageUrl={wpPost.seo.canonical}
         imageUrl={wpPost.featuredImage.node.sourceUrl}
-        pageUrl={site.siteMetadata.siteUrl + wpPost.uri}
       />
 
       <section className="py-7 py-md-9 border-bottom border-gray-300" id="info">
@@ -147,10 +148,10 @@ export const query = graphql`
         }
       }
       content
-    }
-    site {
-      siteMetadata {
-        siteUrl
+      seo {
+        title
+        canonical
+        metaDesc
       }
     }
   }

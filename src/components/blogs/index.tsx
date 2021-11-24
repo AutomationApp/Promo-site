@@ -3,7 +3,6 @@ import ReactPaginate from "react-paginate";
 import CurveShape from "../common/curve-shape";
 import Img from "../../assets/img/covers/cover-13.jpg";
 import BlogItem from "./blog-item";
-import { useBlogsQuery } from "../../graphql/useBlogsQuery";
 import { useBlogsCategoriesQuery } from "../../graphql/useBlogsCategoriesQuery";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -27,8 +26,7 @@ const settings = {
   prevArrow: <PrevArrow />,
 };
 
-const BlogsSection = () => {
-  const { allWpPost } = useBlogsQuery();
+const BlogsSection = ({ allWpPost }) => {
   const { allWpCategory } = useBlogsCategoriesQuery();
   const { allWpCaseStudy } = useCaseStudiesQuery();
 

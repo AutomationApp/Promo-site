@@ -23,10 +23,7 @@ const settings = {
   prevArrow: <PrevArrow />,
 };
 
-const NewHome = () => {
-  const {
-    wpPage: { home },
-  } = useHomePageQuery();
+const NewHome = ({ home }) => {
   const { landingSection } = home;
   const { communicationHub } = home;
   const { detailsSection } = home;

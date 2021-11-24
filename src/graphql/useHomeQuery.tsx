@@ -86,6 +86,11 @@ export const useHomePageQuery = () => {
             }
           }
         }
+        seo {
+          title
+          canonical
+          metaDesc
+        }
       }
     }
   `);
