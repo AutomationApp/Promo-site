@@ -191,7 +191,7 @@ const BlogsSection = ({ allWpPost }) => {
         </div>
       </section>
 
-      <section className="pt-7 pt-md-10 mb-md-10">
+      <section className="pt-7 mb-md-10">
         <div className="container">
           <div className="row align-items-center mb-5">
             <div className="col-12 col-md">
@@ -200,12 +200,12 @@ const BlogsSection = ({ allWpPost }) => {
               <p className="mb-0 text-muted">In-depth looks at our work.</p>
             </div>
             <div className="col-12 col-md-auto">
-              <a
+              {/* <a
                 href="#!"
                 className="btn btn-sm btn-outline-gray-300 d-none d-md-inline"
               >
                 View all
-              </a>
+              </a> */}
             </div>
           </div>
 

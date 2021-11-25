@@ -26,6 +26,11 @@ const NavBlank = ({ navLinks, landingSection }) => {
     setNavbarMenu(false);
   };
 
+  const handleScrollIntoView = (sectionId) => {
+    const titleElement = document.getElementById(sectionId);
+    titleElement.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <nav className="cusNavbar navbar navbar-expand-lg navbar-light">
@@ -164,11 +169,12 @@ const NavBlank = ({ navLinks, landingSection }) => {
                     <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
                   </button>
                 </Link>
-                <Link to="https://app.automation.app/register">
-                  <button className="btn btn-outline-primary lift ml-2">
-                    {landingSection.button2}
-                  </button>
-                </Link>
+                <button
+                  className="btn btn-outline-primary lift ml-2"
+                  onClick={() => handleScrollIntoView("demo")}
+                >
+                  {landingSection.button2}
+                </button>
               </div>
             </div>
           </div>

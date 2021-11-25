@@ -1,5 +1,4 @@
 import React from "react";
-import Illus from "../../assets/img/illustrations/illustration-1.png";
 
 const RequestDemo = ({ demoForm }) => {
   const handleSubmit = (e) => {
@@ -7,7 +6,7 @@ const RequestDemo = ({ demoForm }) => {
   };
   return (
     <>
-      <section className="py-10">
+      <section id="demo" className="py-10">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8">

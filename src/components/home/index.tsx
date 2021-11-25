@@ -340,12 +340,12 @@ const NewHome = ({ home }) => {
               <p className="mb-0 text-muted">{caseStudies.itemDescription}</p>
             </div>
             <div className="col-12 col-md-auto">
-              <a
+              {/* <a
                 href="#!"
                 className="btn btn-sm btn-outline-gray-300 d-none d-md-inline"
               >
                 {caseStudies.itemButton}
-              </a>
+              </a> */}
             </div>
           </div>
 
