@@ -1,12 +1,13 @@
 import React from "react";
 import Seo from "../components/common/seo";
 import { usePrivacyQuery } from "../graphql/usePrivacyQuery";
+import Layout from "../components/common/layout/layout";
 
 const Privacy = () => {
   const { wpPage } = usePrivacyQuery();
 
   return (
-    <>
+    <Layout>
       <Seo
         title={wpPage.seo.title}
         description={wpPage.seo.metaDesc}
@@ -17,7 +18,7 @@ const Privacy = () => {
           __html: wpPage.content,
         }}
       />
-    </>
+    </Layout>
   );
 };
 

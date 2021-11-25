@@ -40,6 +40,31 @@ html {
   }
 }
 
+.cusNavbar {
+  position: absolute;
+  width: 100%;
+}
+
+.heroBackground {
+  position: relative;
+  background-image: url("../img/home/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .heroBackground {
+    background-image: none;
+    height: 100%;
+    padding: 8rem 0;
+    background-color: #fdf5e5;
+  }
+}
+
 .back1 {
   background-image: url("../img/home/rectangle1.svg");
   background-repeat: no-repeat;

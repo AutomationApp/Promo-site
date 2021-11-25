@@ -6,12 +6,13 @@ import moment from "moment";
 // import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { graphql } from "gatsby";
 import Seo from "../components/common/seo";
+import Layout from "../components/common/layout/layout";
 
 const BlogSection = ({ data }) => {
   const { wpPost } = data;
 
   return (
-    <>
+    <Layout>
       <Seo
         title={wpPost.seo.title}
         description={wpPost.seo.metaDesc}
@@ -121,7 +122,7 @@ const BlogSection = ({ data }) => {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

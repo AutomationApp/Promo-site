@@ -7,7 +7,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { Link } from "gatsby";
 import CaseStudyItem from "../common/case-studies-item";
 import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";
 
@@ -26,7 +25,6 @@ const settings = {
 };
 
 const NewHome = ({ home }) => {
-  const { landingSection } = home;
   const { communicationHub } = home;
   const { detailsSection } = home;
   const { caseStudies } = home;
@@ -38,58 +36,6 @@ const NewHome = ({ home }) => {
 
   return (
     <>
-      <section className="pt-4 pt-md-11">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-5 col-lg-6 order-md-2">
-              <img
-                src={landingSection.landingImage.sourceUrl}
-                className="img-fluid "
-                alt="Simple E-commerce. Automation & CRM"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              />
-            </div>
-            <div
-              className="col-12 col-md-7 col-lg-6 order-md-1"
-              data-aos="fade-up"
-            >
-              <h1
-                className="display-3 text-center text-md-left"
-                dangerouslySetInnerHTML={{ __html: landingSection.title }}
-              />
-
-              <p
-                className="lead text-center text-md-left color-green padding-none"
-                dangerouslySetInnerHTML={{ __html: landingSection.subtitle1 }}
-              />
-              <p
-                className="lead text-center text-md-left color-blue padding-none"
-                dangerouslySetInnerHTML={{ __html: landingSection.subtitle2 }}
-              />
-              <p
-                className="lead text-center text-md-left color-orange padding-none mb-6"
-                dangerouslySetInnerHTML={{ __html: landingSection.subtitle3 }}
-              />
-
-              <div className="text-center text-md-left">
-                <Link to="https://app.automation.app/register">
-                  <button className="btn btn-primary shadow lift mr-1">
-                    {landingSection.button1}
-                    <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-                  </button>
-                </Link>
-                <Link to="https://app.automation.app/register">
-                  <button className="btn btn-outline-primary lift ml-2">
-                    {landingSection.button2}
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="pt-8 pt-md-10">
         <div className="container">
           <div className="row justify-content-center">

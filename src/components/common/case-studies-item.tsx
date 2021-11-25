@@ -5,7 +5,7 @@ const CaseStudyItem = ({ data }) => {
   return (
     <div className="row">
       <div className="col-12">
-        <div className="card card-row shadow-light-lg mb-6">
+        <div className="card card-row shadow-light-lg">
           <div className="row no-gutters">
             <div className="col-12 col-md-6">
               <div className="card-img-slider">

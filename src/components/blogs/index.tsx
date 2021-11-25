@@ -191,7 +191,7 @@ const BlogsSection = ({ allWpPost }) => {
         </div>
       </section>
 
-      <section className="pt-7 pt-md-10">
+      <section className="pt-7 pt-md-10 mb-md-10">
         <div className="container">
           <div className="row align-items-center mb-5">
             <div className="col-12 col-md">
