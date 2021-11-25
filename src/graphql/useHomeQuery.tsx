@@ -44,19 +44,12 @@ export const useHomePageQuery = () => {
               buttonText
             }
           }
-          testimonials {
+          caseStudies {
             title
             description
-            testimonial {
-              review
-              author
-              logo {
-                sourceUrl
-              }
-              image {
-                sourceUrl
-              }
-            }
+            itemTitle
+            itemDescription
+            itemButton
           }
           demoForm {
             title

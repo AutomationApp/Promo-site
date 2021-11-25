@@ -7,7 +7,7 @@ import { useBlogsCategoriesQuery } from "../../graphql/useBlogsCategoriesQuery";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CaseStudyItem from "./case-studies-item";
+import CaseStudyItem from "../common/case-studies-item";
 import PrevArrow from "../common/PrevArrow";
 import NextArrow from "../common/NextArrow";
 import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";

@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 const AutomationPoints = () => {
@@ -19,10 +20,13 @@ const AutomationPoints = () => {
             </p>
 
             <div className="col-12 col-md-auto">
-              <a href="overview.html" className="btn btn-primary shadow lift">
+              <Link
+                to="https://app.automation.app/register"
+                className="btn btn-primary shadow lift"
+              >
                 Get started
                 <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-5 offset-lg-1 mt-5 mt-md-0">

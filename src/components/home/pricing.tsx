@@ -46,10 +46,6 @@ const PricingSection = ({ pricing }) => {
                         </span>
                       </div>
 
-                      {/* <p className="text-center text-muted mb-6 mb-md-8">
-                        250 activities
-                      </p> */}
-
                       {pricingCard.packageIncludes.map((item) => (
                         <div className="d-flex" key={item.title}>
                           <div className="badge badge-rounded-circle badge-success-soft mt-1 mr-4">
@@ -63,12 +59,12 @@ const PricingSection = ({ pricing }) => {
                   </div>
                 </div>
 
-                <a
-                  href="#!"
+                <Link
+                  to="https://app.automation.app/register"
                   className="card-btn btn btn-block btn-lg btn-primary"
                 >
                   {pricingCard.buttonText}
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-12 col-md-6 ml-md-n3">

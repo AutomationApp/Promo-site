@@ -6,8 +6,10 @@ import PrevArrow from "../common/PrevArrow";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Testimonials from "./testimonials";
-import { useHomePageQuery } from "../../graphql/useHomeQuery";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "gatsby";
+import CaseStudyItem from "../common/case-studies-item";
+import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";
 
 const settings = {
   // dots: true,
@@ -27,10 +29,12 @@ const NewHome = ({ home }) => {
   const { landingSection } = home;
   const { communicationHub } = home;
   const { detailsSection } = home;
-  const { testimonials } = home;
+  const { caseStudies } = home;
   const { demoForm } = home;
   const { pricing } = home;
   const { automationPoints } = home;
+
+  const { allWpCaseStudy } = useCaseStudiesQuery();
 
   return (
     <>
@@ -69,13 +73,17 @@ const NewHome = ({ home }) => {
               />
 
               <div className="text-center text-md-left">
-                <button className="btn btn-primary shadow lift mr-1">
-                  {landingSection.button1}
-                  <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-                </button>
-                <button className="btn btn-outline-primary lift ml-2">
-                  {landingSection.button2}
-                </button>
+                <Link to="https://app.automation.app/register">
+                  <button className="btn btn-primary shadow lift mr-1">
+                    {landingSection.button1}
+                    <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                  </button>
+                </Link>
+                <Link to="https://app.automation.app/register">
+                  <button className="btn btn-outline-primary lift ml-2">
+                    {landingSection.button2}
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -182,11 +190,13 @@ const NewHome = ({ home }) => {
                   </div>
                 </div>
               </div>
-              <button className="btn btn-green shadow lift mt-8 px-6">
-                {detailsSection.item[0].buttonText}
+              <AnchorLink to="/product-tour#automations">
+                <button className="btn btn-green shadow lift mt-8 px-6">
+                  {detailsSection.item[0].buttonText}
 
-                <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-              </button>
+                  <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                </button>
+              </AnchorLink>
             </div>
             <div className="col-12 col-md-6">
               <div className="row">
@@ -274,10 +284,12 @@ const NewHome = ({ home }) => {
                   </div>
                 </div>
               </div>
-              <button className="btn btn-primary shadow lift mt-8 px-6">
-                {detailsSection.item[1].buttonText}
-                <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-              </button>
+              <AnchorLink to="/product-tour#orders">
+                <button className="btn btn-primary shadow lift mt-8 px-6">
+                  {detailsSection.item[1].buttonText}
+                  <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                </button>
+              </AnchorLink>
             </div>
           </div>
         </div>
@@ -347,10 +359,12 @@ const NewHome = ({ home }) => {
                   </div>
                 </div>
               </div>
-              <button className="btn btn-orange shadow lift mt-8 px-6">
-                {detailsSection.item[2].buttonText}
-                <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-              </button>
+              <AnchorLink to="/product-tour#crm">
+                <button className="btn btn-orange shadow lift mt-8 px-6">
+                  {detailsSection.item[2].buttonText}
+                  <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                </button>
+              </AnchorLink>
             </div>
             <div className="col-12 col-md-6 mt-5 md:mt-0">
               <div className="row">
@@ -365,17 +379,33 @@ const NewHome = ({ home }) => {
 
           <div className="row justify-content-center mt-10">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h2>{testimonials.title}</h2>
+              <h2>{caseStudies.title}</h2>
 
               <p className="font-size-lg text-muted mb-7 mb-md-9">
-                {testimonials.description}
+                {caseStudies.description}
               </p>
             </div>
           </div>
 
+          <div className="row align-items-center mb-5">
+            <div className="col-12 col-md">
+              <h3 className="mb-0">{caseStudies.itemTitle}</h3>
+
+              <p className="mb-0 text-muted">{caseStudies.itemDescription}</p>
+            </div>
+            <div className="col-12 col-md-auto">
+              <a
+                href="#!"
+                className="btn btn-sm btn-outline-gray-300 d-none d-md-inline"
+              >
+                {caseStudies.itemButton}
+              </a>
+            </div>
+          </div>
+
           <Slider {...settings}>
-            {testimonials.testimonial.map((item) => (
-              <Testimonials key={item.review} data={item} />
+            {allWpCaseStudy.nodes.map((item) => (
+              <CaseStudyItem key={item.id} data={item} />
             ))}
           </Slider>
         </div>
