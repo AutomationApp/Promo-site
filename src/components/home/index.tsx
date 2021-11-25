@@ -70,11 +70,11 @@ const NewHome = ({ home }) => {
 
               <div className="text-center text-md-left">
                 <button className="btn btn-primary shadow lift mr-1">
-                  Start for free
+                  {landingSection.button1}
                   <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
                 </button>
                 <button className="btn btn-outline-primary lift ml-2">
-                  Book a demo
+                  {landingSection.button2}
                 </button>
               </div>
             </div>
@@ -183,7 +183,8 @@ const NewHome = ({ home }) => {
                 </div>
               </div>
               <button className="btn btn-green shadow lift mt-8 px-6">
-                Automation features
+                {detailsSection.item[0].buttonText}
+
                 <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
               </button>
             </div>
@@ -274,7 +275,7 @@ const NewHome = ({ home }) => {
                 </div>
               </div>
               <button className="btn btn-primary shadow lift mt-8 px-6">
-                Automation features
+                {detailsSection.item[1].buttonText}
                 <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
               </button>
             </div>
@@ -347,7 +348,7 @@ const NewHome = ({ home }) => {
                 </div>
               </div>
               <button className="btn btn-orange shadow lift mt-8 px-6">
-                Automation features
+                {detailsSection.item[2].buttonText}
                 <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
               </button>
             </div>

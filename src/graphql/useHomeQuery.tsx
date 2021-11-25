@@ -13,6 +13,8 @@ export const useHomePageQuery = () => {
             landingImage {
               sourceUrl
             }
+            button1
+            button2
           }
           communicationHub {
             heading
@@ -39,6 +41,7 @@ export const useHomePageQuery = () => {
               image {
                 sourceUrl
               }
+              buttonText
             }
           }
           testimonials {
@@ -58,6 +61,7 @@ export const useHomePageQuery = () => {
           demoForm {
             title
             subtitle
+            buttonText
             image {
               sourceUrl
             }
@@ -72,10 +76,12 @@ export const useHomePageQuery = () => {
               packageIncludes {
                 title
               }
+              buttonText
             }
             priceCard2 {
               tag
               description
+              buttonText
             }
           }
           automationPoints {

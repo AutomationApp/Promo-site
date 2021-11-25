@@ -67,7 +67,7 @@ const PricingSection = ({ pricing }) => {
                   href="#!"
                   className="card-btn btn btn-block btn-lg btn-primary"
                 >
-                  Get started
+                  {pricingCard.buttonText}
                 </a>
               </div>
             </div>
@@ -99,7 +99,7 @@ const PricingSection = ({ pricing }) => {
                   to="/contact"
                   className="card-btn btn btn-block btn-lg btn-light bg-gray-300 text-gray-700"
                 >
-                  Contact us
+                  {priceCard2.buttonText}
                 </Link>
               </div>
             </div>

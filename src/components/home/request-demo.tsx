@@ -97,7 +97,7 @@ const RequestDemo = ({ demoForm }) => {
                         <div className="row">
                           <div className="col-12">
                             <button className="btn btn-block btn-primary mt-3 lift">
-                              Request a demo
+                              {demoForm.buttonText}
                             </button>
                           </div>
                         </div>
