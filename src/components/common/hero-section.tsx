@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import CustomDropdownItem from "./navbar/dropdown-item";
+import ImgTree from "../../assets/img/home/tree.svg";
+import ImgLand from "../../assets/img/home/land_stuff.svg";
+import ImgHome from "../../assets/img/home/heroHome.svg";
 
 const NavBlank = ({ navLinks, landingSection }) => {
   const [dropDown1, setDropDown1] = useState(false);
@@ -146,19 +149,19 @@ const NavBlank = ({ navLinks, landingSection }) => {
           <div className="row">
             <div className="col-lg-6">
               <h1
-                className="display-3 text-center text-md-left"
+                className="heroTitle text-center text-md-left"
                 dangerouslySetInnerHTML={{ __html: landingSection.title }}
               />
               <p
-                className="lead text-center text-md-left color-green padding-none"
+                className="lead text-center text-md-left color-green padding-none heroSubtitle"
                 dangerouslySetInnerHTML={{ __html: landingSection.subtitle1 }}
               />
               <p
-                className="lead text-center text-md-left color-blue padding-none"
+                className="lead text-center text-md-left color-blue padding-none heroSubtitle"
                 dangerouslySetInnerHTML={{ __html: landingSection.subtitle2 }}
               />
               <p
-                className="lead text-center text-md-left color-orange padding-none mb-6"
+                className="lead text-center text-md-left color-orange padding-none mb-6 heroSubtitle"
                 dangerouslySetInnerHTML={{ __html: landingSection.subtitle3 }}
               />
 
@@ -179,6 +182,9 @@ const NavBlank = ({ navLinks, landingSection }) => {
             </div>
           </div>
         </div>
+        <img src={ImgTree} alt="ImgTree" className="tree" />
+        <img src={ImgLand} alt="ImgLand" className="treeLand" />
+        <img src={ImgHome} alt="ImgHome" className="heroHome" />
       </div>
     </>
   );

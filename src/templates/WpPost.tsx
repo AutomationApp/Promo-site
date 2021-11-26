@@ -1,9 +1,7 @@
 import React from "react";
 import Fb from "../assets/img/icons/social/facebook.svg";
 import Twitter from "../assets/img/icons/social/twitter.svg";
-import BG from "../assets/img/covers/cover-8.jpg";
 import moment from "moment";
-// import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { graphql } from "gatsby";
 import Seo from "../components/common/seo";
 import Layout from "../components/common/layout/layout";
