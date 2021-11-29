@@ -51,14 +51,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
 }
 
 .tree {
   position: absolute;
   left: -80px;
-  bottom: 70px;
-  height: 90vh;
+  bottom: 85px;
+  height: 70vh;
 }
 .treeLand {
   position: absolute;
@@ -70,7 +70,7 @@ html {
   position: absolute;
   right: -50px;
   bottom: 0;
-  height: 90vh;
+  height: 70vh;
 }
 
 .heroTitle {

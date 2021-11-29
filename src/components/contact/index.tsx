@@ -55,7 +55,7 @@ const ContactSection = () => {
               </h6>
 
               <div className="mb-5 mb-md-0">
-                <a href="#!" className="h4">
+                <a href="#!" className="h4 text-primary">
                   +45 2363 2303
                 </a>
               </div>
@@ -63,7 +63,7 @@ const ContactSection = () => {
             <div className="col-12 col-md-4 text-center">
               <h6 className="text-uppercase text-gray-700 mb-1">Email us</h6>
 
-              <a href="#!" className="h4">
+              <a href="#!" className="h4 text-primary">
                 nerds@automation.app
               </a>
             </div>

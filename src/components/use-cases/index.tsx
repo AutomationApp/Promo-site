@@ -1,11 +1,14 @@
 import React from "react";
 import CurveShape from "../common/curve-shape";
-import { AutomationData } from "../../utils/constants";
 import CardItem from "./card-item";
 import TalkSection from "../common/talk-section";
 import AutomationPoints from "../common/automation-points";
 
-const UseCasesSection = () => {
+const UseCasesSection = ({ useCases }) => {
+  const { detailSection } = useCases;
+  const { casesHeroSection } = useCases;
+  const { services } = useCases;
+  console.log(useCases);
   return (
     <>
       <section className="py-12 bg-dark" id="welcome">
@@ -38,13 +41,11 @@ const UseCasesSection = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <p className="lead text-white">AUTOMATE WHATEVER YOU WANT</p>
+              <p className="lead text-white">{casesHeroSection.tag}</p>
               <h1 className="display-2 font-weight-bold text-white mb-5">
-                Use Cases
+                {casesHeroSection.title}
               </h1>
-              <p className="lead text-white">
-                Marketing • Sales • Follow-ups • Internal Processes
-              </p>
+              <p className="lead text-white">{casesHeroSection.subtitle}</p>
             </div>
           </div>
         </div>
@@ -67,14 +68,14 @@ const UseCasesSection = () => {
           </div>
 
           <div className="row">
-            {AutomationData.map((item) => (
-              <CardItem key={item.id} data={item} />
+            {services.map((item) => (
+              <CardItem key={item.title} data={item} />
             ))}
           </div>
         </div>
       </section>
 
-      <AutomationPoints />
+      <AutomationPoints detailSection={detailSection} />
 
       <TalkSection />
     </>
