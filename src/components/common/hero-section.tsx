@@ -4,6 +4,8 @@ import CustomDropdownItem from "./navbar/dropdown-item";
 import ImgTree from "../../assets/img/home/tree.svg";
 import ImgLand from "../../assets/img/home/land_stuff.svg";
 import ImgHome from "../../assets/img/home/heroHome.svg";
+//@ts-ignore
+import Brand from "../../assets/img/brand.svg";
 
 const NavBlank = ({ navLinks, landingSection }) => {
   const [dropDown1, setDropDown1] = useState(false);
@@ -38,6 +40,9 @@ const NavBlank = ({ navLinks, landingSection }) => {
     <>
       <nav className="cusNavbar navbar navbar-expand-lg navbar-light">
         <div className="container">
+          <Link className="navbar-brand opacity-0" title="Home" to="/">
+            <img src={Brand} className="navbar-brand-img" alt="Brand Logo" />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

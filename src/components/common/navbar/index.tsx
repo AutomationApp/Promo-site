@@ -124,19 +124,18 @@ const NavMenu = ({ navLinks }) => {
           <div className="ml-auto flex">
             <Link
               to="https://app.automation.app/login"
-              className="navbar-btn btn btn-sm btn-outline-primary lift mr-2"
+              className="navbar-btn btn btn-sm mr-2"
               title="Sign In"
+              style={{ color: "#506690" }}
               onClick={() => setNavbarMenu(false)}
             >
               Sign in
             </Link>
-            <Link
-              to="https://app.automation.app/register"
-              className="navbar-btn btn btn-sm btn-primary lift"
-              title="Get Started"
-              onClick={() => setNavbarMenu(false)}
-            >
-              Get started
+            <Link to="https://app.automation.app/register">
+              <button className="navbar-btn btn btn-sm btn-primary lift">
+                Start for free
+                <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+              </button>
             </Link>
           </div>
         </div>
