@@ -4,10 +4,16 @@ import Pricing from "../common/pricing";
 import CurveShape from "../../components/common/curve-shape";
 import TalkSection from "../common/talk-section";
 import { Link } from "gatsby";
+import { useCasesPageQuery } from "../../graphql/useCasesPageQuery";
+import AutomationPoints from "../common/automation-points";
 
 const PricingSection = ({ wpPage }) => {
   const { pricing } = wpPage;
-
+  const {
+    wpPage: {
+      useCases: { detailSection },
+    },
+  } = useCasesPageQuery();
   return (
     <>
       <section className="pt-8 pt-md-11 pb-10 pb-md-15 bg-dark">
@@ -90,6 +96,10 @@ const PricingSection = ({ wpPage }) => {
           </div>
         </div>
       </section>
+
+      <div className="mt-10">
+        <AutomationPoints detailSection={detailSection} />
+      </div>
 
       <Faqs faqs={pricing.faqs} />
       <TalkSection />

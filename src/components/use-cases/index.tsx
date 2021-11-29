@@ -8,7 +8,6 @@ const UseCasesSection = ({ useCases }) => {
   const { detailSection } = useCases;
   const { casesHeroSection } = useCases;
   const { services } = useCases;
-  console.log(useCases);
   return (
     <>
       <section className="py-12 bg-dark" id="welcome">

@@ -2,9 +2,15 @@ import React from "react";
 import CurveShape from "../common/curve-shape";
 import AutomationPoints from "../common/automation-points";
 import TalkSection from "../common/talk-section";
+import { useCasesPageQuery } from "../../graphql/useCasesPageQuery";
 
 const FeaturesSection = ({ wpPage }) => {
   const { features } = wpPage;
+  const {
+    wpPage: {
+      useCases: { detailSection },
+    },
+  } = useCasesPageQuery();
 
   return (
     <>
@@ -38,12 +44,14 @@ const FeaturesSection = ({ wpPage }) => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <p className="lead text-white">{features.heroSection.subtitle}</p>
+              <p className="lead text-white">
+                {features.featuresHeroSection.subtitle}
+              </p>
               <h1 className="display-2 font-weight-bold text-white mb-5">
-                {features.heroSection.title}
+                {features.featuresHeroSection.title}
               </h1>
               <p className="lead text-white">
-                {features.heroSection.description}
+                {features.featuresHeroSection.description}
               </p>
             </div>
           </div>
@@ -295,7 +303,7 @@ const FeaturesSection = ({ wpPage }) => {
       </section>
 
       <div className="mt-10">
-        <AutomationPoints />
+        <AutomationPoints detailSection={detailSection} />
       </div>
       <TalkSection />
     </>

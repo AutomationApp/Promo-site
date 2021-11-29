@@ -5,7 +5,7 @@ export const useFeaturesQuery = () => {
     {
       wpPage(title: { eq: "Features" }) {
         features {
-          heroSection {
+          featuresHeroSection {
             title
             subtitle
             description
