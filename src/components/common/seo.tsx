@@ -9,7 +9,7 @@ function Seo({ description, lang, meta, title, imageUrl, pageUrl, author }) {
         lang,
       }}
       title={title}
-      titleTemplate={title ? `%s | ${title}` : null}
+      titleTemplate={title ? `${title}` : null}
       meta={[
         {
           name: `description`,
