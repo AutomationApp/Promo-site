@@ -16,7 +16,7 @@ const Privacy = () => {
       <section className="py-9">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-12 col-md-10 col-lg-9 col-xl-8">
+            <div className="col-12 col-md-10 col-lg-10 col-xl-10">
               <div
                 dangerouslySetInnerHTML={{
                   __html: wpPage.content,
