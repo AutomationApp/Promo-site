@@ -140,6 +140,12 @@ html {
     background-size: cover;
   }
 }
+@media(min-width: 992px) and (max-width: 1200px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 /* 
 Documentation Css
 */
