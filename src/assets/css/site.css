@@ -91,10 +91,13 @@ html {
     background-color: #fdf5e5;
   }
   .tree {
-    display: none;
+    /* display: none; */
+    height: 45vh;
+    left: -55px;
   }
   .treeLand {
-    display: none;
+    /* display: none; */
+    height: 100px;
   }
 
   .heroTitle {
@@ -113,10 +116,35 @@ html {
     height: 80vh;
   }
 }
+@media (max-width: 1200px) {
+  .heroHome {
+    right: -80px;
+    height: 65vh;
+  }
+}
 
 @media (max-width: 900px) {
   .heroHome {
+    height: 55vh;
+  }
+  .tree {
+    height: 30vh;
+    left: -35px;
+  }
+  .treeLand {
+    height: 80px;
+  }
+}
+@media(max-width: 500px) {
+  .heroHome {
     display: none;
+  }
+  .tree {
+    height: 60vh;
+    left: -60px;
+  }
+  .treeLand {
+    height: 80px;
   }
 }
 
