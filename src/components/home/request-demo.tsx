@@ -50,15 +50,16 @@ const RequestDemo = ({ demoForm }) => {
                 <div className="card-body">
                   <div className="row justify-content-center">
                     <div className="col-12 col-xl-11">
-                      <div className="text-center">
-                        <img
-                          src={demoForm.image.sourceUrl}
-                          alt="Time for a demo?"
-                          className="img-fluid mb-3"
-                          width="200px"
-                        />
-                      </div>
-
+                      {demoForm?.image?.source && (
+                        <div className="text-center">
+                          <img
+                            src={demoForm.image.sourceUrl}
+                            alt="Time for a demo?"
+                            className="img-fluid mb-3"
+                            width="200px"
+                          />
+                        </div>
+                      )}
                       <h2 className="font-weight-bold text-center mb-1">
                         {demoForm.title}
                       </h2>

@@ -40,7 +40,7 @@ const CompleteDetails = ({ crm }) => {
                 index % 2 === 0 ? "order-0" : "order-2"
               }`}
             >
-              <h2 dangerouslySetInnerHTML={{ __html: item.heading }} />
+              <h2 dangerouslySetInnerHTML={{ __html: item?.heading }} />
               <p className="font-size-md text-gray-700 mb-6">
                 {item.description}
               </p>
@@ -50,13 +50,15 @@ const CompleteDetails = ({ crm }) => {
                 </button>
               )}
             </div>
-            <div className="col-12 col-md-6 ">
-              <img
-                src={item.image.sourceUrl}
-                alt="Automate"
-                className="img-fluid mb-4 rounded"
-              />
-            </div>
+            {item?.image?.sourceUrl && (
+              <div className="col-12 col-md-6 ">
+                <img
+                  src={item?.image?.sourceUrl}
+                  alt="Automate"
+                  className="img-fluid mb-4 rounded"
+                />
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -90,10 +92,11 @@ const CompleteDetails = ({ crm }) => {
               {automationPoints?.map((item) => (
                 <div className="col-12 col-md-6">
                   <div className="d-flex">
-                    <div className="">
-                      <img src={item.icon.sourceUrl} alt={item.title} />
-                    </div>
-
+                    {item?.icon?.sourceUrl && (
+                      <div className="">
+                        <img src={item.icon.sourceUrl} alt={item.title} />
+                      </div>
+                    )}
                     <div className="ml-5">
                       <h4 className="text-white">{item.title}</h4>
 
