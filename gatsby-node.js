@@ -25,6 +25,32 @@ exports.createPages = async function ({ actions, graphql, reporter }) {
     });
   });
 
+  const landingPagesResult = await graphql(`
+    {
+      allWpLandingPage {
+        nodes {
+          __typename
+          id
+          slug
+          uri
+        }
+      }
+    }
+  `);
+
+  const { allWpLandingPage } = landingPagesResult?.data;
+  let landingTemplate = require.resolve(`./src/templates/WpLanding.tsx`);
+
+  console.log(allWpLandingPage.nodes, "I am Node JS");
+
+  allWpLandingPage.nodes.map((landingPage) => {
+    actions.createPage({
+      path: landingPage.uri,
+      component: landingTemplate,
+      context: landingPage,
+    });
+  });
+
   const redirectsResult = await graphql(`
     {
       allWpRedirect {

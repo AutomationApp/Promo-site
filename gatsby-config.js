@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: `${process.env.GATSBY_API_URL}/graphql`,
+        url: "https://wordpress-638795-2187391.cloudwaysapps.com/graphql",
         restApiRoutePrefix: "wp-json",
         useACF: true,
       },

@@ -44,14 +44,14 @@ export const useHomePageQuery = () => {
               buttonText
             }
           }
-          caseStudies {
+          caseStudieshome {
             title
             description
             itemTitle
             itemDescription
             itemButton
           }
-          demoForm {
+          demoFormhome {
             title
             subtitle
             buttonText
@@ -59,7 +59,7 @@ export const useHomePageQuery = () => {
               sourceUrl
             }
           }
-          pricing {
+          pricingHome {
             title
             description
             pricingCard {
@@ -77,7 +77,7 @@ export const useHomePageQuery = () => {
               buttonText
             }
           }
-          automationPoints {
+          automationPointshome {
             title
             description
             icon {

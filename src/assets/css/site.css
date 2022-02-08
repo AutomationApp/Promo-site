@@ -34,6 +34,11 @@ html {
   position: absolute;
   height: 300px;
 }
+
+.font-size-md {
+  font-size: 17px !important;
+}
+
 @media (max-width: 1400px) {
   .footerRow {
     margin: 0 0;
@@ -47,7 +52,6 @@ html {
 
 .heroBackground {
   position: relative;
-  background-color: #fdf5e5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +75,13 @@ html {
   right: -50px;
   bottom: 0;
   height: 70vh;
+}
+
+.heroCRM {
+  position: absolute;
+  right: 100px;
+  /* bottom: 0; */
+  height: 40vh;
 }
 
 .heroTitle {
@@ -116,6 +127,13 @@ html {
     height: 80vh;
   }
 }
+
+@media (max-width: 1450px) {
+  .cmrLanding {
+    padding-top: 110px !important;
+  }
+}
+
 @media (max-width: 1200px) {
   .heroHome {
     right: -80px;
@@ -124,7 +142,8 @@ html {
 }
 
 @media (max-width: 900px) {
-  .heroHome {
+  .heroHome,
+  .heroCRM {
     height: 55vh;
   }
   .tree {
@@ -135,8 +154,9 @@ html {
     height: 80px;
   }
 }
-@media(max-width: 500px) {
-  .heroHome {
+@media (max-width: 500px) {
+  .heroHome,
+  .heroCRM {
     display: none;
   }
   .tree {
@@ -145,6 +165,12 @@ html {
   }
   .treeLand {
     height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroCRM {
+    display: none;
   }
 }
 
@@ -168,7 +194,7 @@ html {
     background-size: cover;
   }
 }
-@media(min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1200px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -205,8 +231,8 @@ Documentation Css
 .doc-aside .h2 {
   color: #489be8;
   text-decoration: none;
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 .doc-aside .h3 {
   margin-left: 1.5rem;
@@ -229,7 +255,7 @@ Documentation Css
   color: #489be8;
 }
 .doc-main .anchor svg {
-  margin-right: .556rem;
+  margin-right: 0.556rem;
   height: 16;
   width: 16;
 }
@@ -240,7 +266,7 @@ Documentation Css
 .highlight {
   background-color: #f7f7f9;
   padding: 1rem;
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 .highlight pre {
   padding: 0;
@@ -254,4 +280,11 @@ Documentation Css
 .highlight pre code {
   font-size: inherit;
   color: #212529;
+}
+
+/* CRM Page Stylin */
+
+.crmdetails h2 {
+  font-size: 32px;
+  font-weight: 500;
 }

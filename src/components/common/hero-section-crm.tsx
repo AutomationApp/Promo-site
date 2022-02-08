@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import CustomDropdownItem from "./navbar/dropdown-item";
-import ImgTree from "../../assets/img/home/tree.svg";
-import ImgLand from "../../assets/img/home/land_stuff.svg";
-import ImgHome from "../../assets/img/home/heroHome.svg";
+
 //@ts-ignore
 import Brand from "../../assets/img/brand.svg";
 
-const NavBlank = ({ navLinks, landingSection }) => {
-  console.log(navLinks, "i am navlink");
+const NavCRM = ({ navLinks, landingSection, bgColor }) => {
   const [dropDown1, setDropDown1] = useState(false);
   const [navbarMenu, setNavbarMenu] = useState(false);
+
+  console.log(landingSection.points, " I am point");
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -150,50 +149,65 @@ const NavBlank = ({ navLinks, landingSection }) => {
           </div>
         </div>
       </nav>
-      <div className="heroBackground">
+      <div
+        className="heroBackground cmrLanding pt-10"
+        style={{ backgroundColor: bgColor }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
               <h1
                 className="heroTitle text-center text-md-left"
-                dangerouslySetInnerHTML={{ __html: landingSection.title }}
+                dangerouslySetInnerHTML={{ __html: landingSection?.title }}
               />
               <p
-                className="lead text-center text-md-left color-green padding-none heroSubtitle"
-                dangerouslySetInnerHTML={{ __html: landingSection.subtitle1 }}
-              />
-              <p
-                className="lead text-center text-md-left color-blue padding-none heroSubtitle"
-                dangerouslySetInnerHTML={{ __html: landingSection.subtitle2 }}
-              />
-              <p
-                className="lead text-center text-md-left color-orange padding-none mb-6 heroSubtitle"
-                dangerouslySetInnerHTML={{ __html: landingSection.subtitle3 }}
+                className="lead text-center mb-8 text-md-left color-orange padding-none heroSubtitle"
+                dangerouslySetInnerHTML={{ __html: landingSection?.subtitle }}
               />
 
               <div className="text-center text-md-left">
-                <Link to="https://app.automation.app/register">
-                  <button className="btn btn-primary shadow lift mr-1">
-                    {landingSection.button1}
-                    <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                {landingSection.button1 && (
+                  <Link to="https://app.automation.app/register">
+                    <button className="btn btn-primary shadow lift mr-1">
+                      {landingSection?.button1}
+                      <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
+                    </button>
+                  </Link>
+                )}
+                {landingSection.button2 && (
+                  <button
+                    className="btn btn-outline-primary lift ml-2"
+                    onClick={() => handleScrollIntoView("demo")}
+                  >
+                    {landingSection?.button2}
                   </button>
-                </Link>
-                <button
-                  className="btn btn-outline-primary lift ml-2"
-                  onClick={() => handleScrollIntoView("demo")}
-                >
-                  {landingSection.button2}
-                </button>
+                )}
               </div>
             </div>
           </div>
+          <div className="row mt-10">
+            {landingSection?.points?.map((item, index) => (
+              <div className="col-12 col-lg-3" key={index}>
+                <div className="d-flex">
+                  <div className="badge badge-rounded-circle badge-dark-soft mt-1 mr-4">
+                    <i className="fe fe-check"></i>
+                  </div>
+                  <p className="text-dark text-nowrap">{item?.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <img src={ImgTree} alt="ImgTree" className="tree" />
-        <img src={ImgLand} alt="ImgLand" className="treeLand" />
-        <img src={ImgHome} alt="ImgHome" className="heroHome" />
+        {landingSection.landingImage && (
+          <img
+            src={landingSection?.landingImage?.sourceUrl}
+            alt="ImgHome"
+            className="heroCRM"
+          />
+        )}
       </div>
     </>
   );
 };
 
-export default NavBlank;
+export default NavCRM;

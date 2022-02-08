@@ -27,10 +27,10 @@ const settings = {
 const NewHome = ({ home }) => {
   const { communicationHub } = home;
   const { detailsSection } = home;
-  const { caseStudies } = home;
-  const { demoForm } = home;
-  const { pricing } = home;
-  const { automationPoints } = home;
+  const { caseStudieshome } = home;
+  const { demoFormhome } = home;
+  const { pricingHome } = home;
+  const { automationPointshome } = home;
 
   const { allWpCaseStudy } = useCaseStudiesQuery();
 
@@ -325,19 +325,19 @@ const NewHome = ({ home }) => {
 
           <div className="row justify-content-center mt-10">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h2>{caseStudies.title}</h2>
+              <h2>{caseStudieshome.title}</h2>
 
               <p className="font-size-lg text-muted mb-7 mb-md-9">
-                {caseStudies.description}
+                {caseStudieshome.description}
               </p>
             </div>
           </div>
 
           <div className="row align-items-center mb-5">
             <div className="col-12 col-md">
-              <h3 className="mb-0">{caseStudies.itemTitle}</h3>
+              <h3 className="mb-0">{caseStudieshome.itemTitle}</h3>
 
-              <p className="mb-0 text-muted">{caseStudies.itemDescription}</p>
+              <p className="mb-0 text-muted">{caseStudieshome.itemDescription}</p>
             </div>
             <div className="col-12 col-md-auto">
               {/* <a
@@ -357,13 +357,13 @@ const NewHome = ({ home }) => {
         </div>
       </section>
 
-      <RequestDemo demoForm={demoForm} />
-      <PricingSection pricing={pricing} />
+      <RequestDemo demoForm={demoFormhome} />
+       <PricingSection pricing={pricingHome} />
 
       <section className="pt-15 pb-12 bg-dark">
         <div className="container pt-8 pt-md-11">
           <div className="row">
-            {automationPoints.map((item) => (
+            {automationPointshome.map((item) => (
               <div className="col-12 col-md-6">
                 <div className="d-flex">
                   <div className="">

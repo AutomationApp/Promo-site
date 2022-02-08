@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 import CustomDropdownItem from "./dropdown-item";
 
 const NavMenu = ({ navLinks }) => {
+  console.log(navLinks, "i am navlink");
   const [dropDown1, setDropDown1] = useState(false);
   const [navbarMenu, setNavbarMenu] = useState(false);
 
