@@ -8,7 +8,6 @@ import ImgHome from "../../assets/img/home/heroHome.svg";
 import Brand from "../../assets/img/brand.svg";
 
 const NavBlank = ({ navLinks, landingSection }) => {
-  console.log(navLinks, "i am navlink");
   const [dropDown1, setDropDown1] = useState(false);
   const [navbarMenu, setNavbarMenu] = useState(false);
 
@@ -77,24 +76,25 @@ const NavBlank = ({ navLinks, landingSection }) => {
             <ul className="navbar-nav ml-auto">
               {navLinks.map((item) => (
                 <>
+                  {console.log(item.childItems.nodes.length, "okokkoo")}
                   {item.parentId === null ? (
                     <li
                       className={
-                        item.label === "Product Tour"
+                        item.childItems.nodes.length > 0
                           ? "nav-item dropdown"
                           : "nav-item"
                       }
                       key={item.id}
                       onMouseEnter={
-                        item.label === "Product Tour" ? onMouseEnter : null
+                        item.childItems.nodes.length > 0 ? onMouseEnter : null
                       }
                       onMouseLeave={
-                        item.label === "Product Tour" ? onMouseLeave : null
+                        item.childItems.nodes.length > 0 ? onMouseLeave : null
                       }
                     >
                       <Link
                         className={
-                          item.label === "Product Tour"
+                          item.childItems.nodes.length > 0
                             ? "nav-link dropdown-toggle"
                             : "nav-link"
                         }
@@ -104,7 +104,7 @@ const NavBlank = ({ navLinks, landingSection }) => {
                       >
                         {item.label}
                       </Link>
-                      {item.label === "Product Tour" ? (
+                      {item.childItems.nodes.length > 0 ? (
                         <div
                           className={`${
                             dropDown1

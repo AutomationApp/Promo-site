@@ -9,8 +9,6 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
   const [dropDown1, setDropDown1] = useState(false);
   const [navbarMenu, setNavbarMenu] = useState(false);
 
-  console.log(landingSection.points, " I am point");
-
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropDown1(false);
@@ -150,8 +148,8 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
         </div>
       </nav>
       <div
-        className="heroBackground cmrLanding pt-10"
-        style={{ backgroundColor: bgColor }}
+        className="heroBackground cmrLanding pt-15 "
+        style={{ backgroundColor: bgColor, height: "auto" }}
       >
         <div className="container">
           <div className="row">
@@ -161,7 +159,7 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
                 dangerouslySetInnerHTML={{ __html: landingSection?.title }}
               />
               <p
-                className="lead text-center mb-8 text-md-left color-orange padding-none heroSubtitle"
+                className="lead text-center mb-8 text-md-left padding-none heroSubtitle"
                 dangerouslySetInnerHTML={{ __html: landingSection?.subtitle }}
               />
 
