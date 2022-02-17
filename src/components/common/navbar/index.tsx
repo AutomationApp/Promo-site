@@ -71,21 +71,21 @@ const NavMenu = ({ navLinks }) => {
                 {item.parentId === null ? (
                   <li
                     className={
-                      item.label === "Product Tour"
+                      item.childItems.nodes.length > 0
                         ? "nav-item dropdown"
                         : "nav-item"
                     }
                     key={item.id}
                     onMouseEnter={
-                      item.label === "Product Tour" ? onMouseEnter : null
+                      item.childItems.nodes.length > 0 ? onMouseEnter : null
                     }
                     onMouseLeave={
-                      item.label === "Product Tour" ? onMouseLeave : null
+                      item.childItems.nodes.length > 0 ? onMouseLeave : null
                     }
                   >
                     <Link
                       className={
-                        item.label === "Product Tour"
+                        item.childItems.nodes.length > 0
                           ? "nav-link dropdown-toggle"
                           : "nav-link"
                       }
@@ -95,7 +95,7 @@ const NavMenu = ({ navLinks }) => {
                     >
                       {item.label}
                     </Link>
-                    {item.label === "Product Tour" ? (
+                    {item.childItems.nodes.length > 0 ? (
                       <div
                         className={`${
                           dropDown1

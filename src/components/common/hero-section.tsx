@@ -76,7 +76,6 @@ const NavBlank = ({ navLinks, landingSection }) => {
             <ul className="navbar-nav ml-auto">
               {navLinks.map((item) => (
                 <>
-                  {console.log(item.childItems.nodes.length, "okokkoo")}
                   {item.parentId === null ? (
                     <li
                       className={

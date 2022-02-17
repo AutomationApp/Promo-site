@@ -8,7 +8,7 @@ import {
   faShoppingCart,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "gatsby";
 const ProductTourSection = ({ wpPage }) => {
   const { productTour } = wpPage;
 

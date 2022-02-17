@@ -33,7 +33,7 @@ const FaqRow = ({ data }) => {
               className="card shadow-light-lg accordion mb-5 mb-md-6"
               id="helpAccordionOne"
             >
-              <FaqItem faqs={data.faq} changeImageSource={changeImageSource} />
+              <FaqItem faqs={data} changeImageSource={changeImageSource} />
             </div>
           </div>
           <div className="col-12 col-md-6">

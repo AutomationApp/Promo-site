@@ -30,6 +30,8 @@ export const useProductTourQuery = () => {
             image4 {
               sourceUrl
             }
+            button
+            buttonDestinationUrl
             faq {
               id
               areacontrol

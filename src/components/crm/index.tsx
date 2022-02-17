@@ -28,30 +28,36 @@ const CompleteDetails = ({ crm }) => {
   console.log(caseStudies, "features testing");
 
   return (
-    <section className="crmdetails pt-8 pt-md-10">
-      <div className="container">
+    <section className="crmdetails pt-8 pb-10 pt-md-10">
+      <div className="contdainer">
         {features?.map((item, index) => (
           <div
             className="row align-items-center justify-content-between mt-10"
             key={index}
           >
             <div
-              className={`col-12 col-md-6 ${
-                index % 2 === 0 ? "order-0" : "order-2"
+              className={`col-12  order-sm-0 col-md-6 ${
+                index % 2 === 0 ? "order-md-0 ml-auto" : "order-md-2 mr-auto"
               }`}
             >
-              <h2 dangerouslySetInnerHTML={{ __html: item?.heading }} />
-              <p className="font-size-md text-gray-700 mb-6">
-                {item.description}
-              </p>
-              {item.button && (
-                <button className="btn btn-outline-primary lift ml-2">
-                  {item.button}
-                </button>
-              )}
+              <div
+                className={`w-75 mx-sm-auto mx-md-0 w-md-75 ${
+                  index % 2 === 0 ? "ml-md-auto" : "mr-md-auto"
+                }`}
+              >
+                <h2 dangerouslySetInnerHTML={{ __html: item?.heading }} />
+                <p className="font-size-md text-gray-700 mb-6">
+                  {item.description}
+                </p>
+                {item.button && (
+                  <button className="btn btn-outline-primary lift ml-2">
+                    {item.button}
+                  </button>
+                )}
+              </div>
             </div>
             {item?.image?.sourceUrl && (
-              <div className="col-12 col-md-6 ">
+              <div className="col-12 order-sm-1 col-md-6 ">
                 <img
                   src={item?.image?.sourceUrl}
                   alt="Automate"
