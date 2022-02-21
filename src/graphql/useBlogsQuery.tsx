@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useBlogsQuery = () => {
   const blogs = useStaticQuery(graphql`
     {
-      allWpPost {
+      allWpPost(sort: { fields: [date], order: DESC }) {
         nodes {
           id
           title

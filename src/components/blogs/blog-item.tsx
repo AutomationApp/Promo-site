@@ -66,7 +66,7 @@ const BlogItem = ({ blog }) => {
 
             <p className="h6 text-uppercase text-muted mb-0 ml-auto">
               <time dateTime="2019-05-02">
-                {moment(blog.date).format("MMM d")}
+                { moment(blog.date).format('MMM DD') }
               </time>
             </p>
           </div>
