@@ -41,7 +41,7 @@ export const useLayoutQuery = () => {
           }
         }
       }
-      allWpPost {
+      allWpPost(sort: { fields: [date], order: DESC }) {
         nodes {
           title
           date
