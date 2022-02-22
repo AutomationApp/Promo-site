@@ -50,7 +50,10 @@ export const query = graphql`
           image {
             sourceUrl
           }
-          button
+          button,
+          buttonLink {
+            url
+          }
         }
         caseStudies {
           title

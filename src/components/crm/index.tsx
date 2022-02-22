@@ -6,6 +6,7 @@ import PrevArrow from "../common/PrevArrow";
 import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";
 import RequestDemo from "../home/request-demo";
 import PricingSection from "../home/pricing";
+import { Link } from "gatsby";
 
 const settings = {
   // dots: true,
@@ -26,6 +27,7 @@ const CompleteDetails = ({ crm }) => {
   const { pricing } = crm;
   const { automationPoints } = crm;
   console.log(caseStudies, "features testing");
+  console.log(features);
 
   return (
     <section className="crmdetails pt-8 pb-8 pt-md-3">
@@ -50,9 +52,11 @@ const CompleteDetails = ({ crm }) => {
                   {item.description}
                 </p>
                 {item.button && (
-                  <button className="btn btn-outline-primary lift ml-2">
-                    {item.button}
-                  </button>
+                  <Link to={item.buttonLink.url}>
+                    <button className="btn btn-outline-primary lift ml-2">
+                      {item.button}
+                    </button>
+                  </Link>
                 )}
               </div>
             </div>
