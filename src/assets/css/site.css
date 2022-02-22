@@ -144,6 +144,13 @@ html {
 @media (max-width: 1450px) {
   .cmrLanding {
     padding-top: 150px !important;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 1450px) {
+  .cmrLanding {
+    padding-bottom: 70px;
   }
 }
 
@@ -153,7 +160,7 @@ html {
     height: 65vh;
   }
   .cmrLanding {
-    padding-bottom: 15px !important;
+    padding-bottom: 50px !important;
   }
 }
 

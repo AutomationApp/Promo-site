@@ -28,8 +28,8 @@ const CompleteDetails = ({ crm }) => {
   console.log(caseStudies, "features testing");
 
   return (
-    <section className="crmdetails pt-8 pb-10 pt-md-10">
-      <div className="contdainer">
+    <section className="crmdetails pt-8 pb-8 pt-md-3">
+      <div className="features">
         {features?.map((item, index) => (
           <div
             className="row align-items-center justify-content-between mt-10"
