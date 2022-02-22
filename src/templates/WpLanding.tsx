@@ -2,14 +2,20 @@ import { graphql } from "gatsby";
 import React from "react";
 import LayoutCRM from "../components/common/layout/layout-crm";
 import CompleteDetails from "../components/crm";
+import Seo from "../components/common/seo";
 
 const LandingPage = ({ data }) => {
   const {
-    wpLandingPage: { crm },
+    wpLandingPage: { crm, seo },
   } = data;
   console.log(crm, "I am CRdddM");
   return (
     <LayoutCRM dataHeader={crm.crmLandingSection} bgColor={crm.bgcolor}>
+      <Seo
+        title={seo.title}
+        description={seo.metaDesc}
+        pageUrl={seo.canonical}
+      />
       <CompleteDetails crm={crm} />
     </LayoutCRM>
   );
@@ -20,6 +26,11 @@ export default LandingPage;
 export const query = graphql`
   query LandingPageById($id: String) {
     wpLandingPage(id: { eq: $id }) {
+      seo {
+        title
+        metaDesc
+        canonical
+      }
       crm {
         bgcolor
         crmLandingSection {
