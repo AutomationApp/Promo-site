@@ -29,7 +29,7 @@ const FaqItem = ({ faqs, changeImageSource }) => {
           </>
         ))}
       </Accordion>
-      <Link to={faqs.buttonDestinationUrl}>
+      <Link to={faqs.buttonDestinationUrl} className="text-decoration-none">
         <button className="navbar-btn btn btn-block mt-3 btn-primary lift">
           {faqs.button}
           <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
