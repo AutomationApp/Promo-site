@@ -147,23 +147,31 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
           </div>
         </div>
       </nav>
-      <div
-        className="heroBackground cmrLanding pt-15 "
+      <section
+        className="heroBackground cmrLanding pt-4 pt-md-11"
         style={{ backgroundColor: bgColor, height: "auto" }}
       >
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-5 order-md-2">
+              {landingSection.landingImage && (
+                <img
+                  src={landingSection?.landingImage?.sourceUrl}
+                  alt="ImgHome"
+                  className="img-fluid mb-6 mb-md-0"
+                />
+              )}
+            </div>
+            <div className="col-12 col-md-7 order-md-1">
               <h1
-                className="heroTitle text-center text-md-left"
-                dangerouslySetInnerHTML={{ __html: landingSection?.title }}
+                  className="display-4"
+                  dangerouslySetInnerHTML={{ __html: landingSection?.title }}
               />
               <p
-                className="lead text-center mb-8 text-md-left padding-none heroSubtitle"
+                className="lead text-muted mb-0"
                 dangerouslySetInnerHTML={{ __html: landingSection?.subtitle }}
               />
-
-              <div className="text-center text-md-left">
+              <div className="text-center text-md-left pt-5">
                 {landingSection.button1 && (
                   <Link to="https://app.automation.app/register">
                     <button className="btn btn-primary shadow lift mr-1">
@@ -181,7 +189,8 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
                   </button>
                 )}
               </div>
-            </div>
+
+          </div>
           </div>
           <div className="row mt-10">
             {landingSection?.points?.map((item, index) => (
@@ -196,14 +205,7 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
             ))}
           </div>
         </div>
-        {landingSection.landingImage && (
-          <img
-            src={landingSection?.landingImage?.sourceUrl}
-            alt="ImgHome"
-            className="heroCRM"
-          />
-        )}
-      </div>
+      </section>
     </>
   );
 };
