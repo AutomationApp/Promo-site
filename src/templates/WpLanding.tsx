@@ -8,7 +8,6 @@ const LandingPage = ({ data }) => {
   const {
     wpLandingPage: { crm, seo },
   } = data;
-  console.log(crm, "I am CRdddM");
   return (
     <LayoutCRM dataHeader={crm.crmLandingSection} bgColor={crm.bgcolor}>
       <Seo
