@@ -1,6 +1,6 @@
 import React from "react";
-import RequestDemo from "./request-demo";
-import PricingSection from "./pricing";
+import RequestDemo from "../global-elements/request-demo";
+import PricingSection from "../global-elements/pricing";
 import NextArrow from "../common/NextArrow";
 import PrevArrow from "../common/PrevArrow";
 import Slider from "react-slick";
@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import CaseStudyItem from "../common/case-studies-item";
 import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";
+import USPSection from "../global-elements/usp";
+import CaseStudySection from "../global-elements/case-studies";
 
 const settings = {
   // dots: true,
@@ -27,12 +29,12 @@ const settings = {
 const NewHome = ({ home }) => {
   const { communicationHub } = home;
   const { detailsSection } = home;
-  const { caseStudieshome } = home;
-  const { demoFormhome } = home;
-  const { pricingHome } = home;
-  const { automationPointshome } = home;
+  // const { caseStudieshome } = home;
+  // const { demoFormhome } = home;
+  // const { pricingHome } = home;
+  // const { automationPointshome } = home;
 
-  const { allWpCaseStudy } = useCaseStudiesQuery();
+  // const { allWpCaseStudy } = useCaseStudiesQuery();
 
   return (
     <>
@@ -322,67 +324,17 @@ const NewHome = ({ home }) => {
               </div>
             </div>
           </div>
-
-          <div className="row justify-content-center mt-10">
-            <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h2>{caseStudieshome.title}</h2>
-
-              <p className="font-size-lg text-muted mb-7 mb-md-9">
-                {caseStudieshome.description}
-              </p>
-            </div>
-          </div>
-
-          <div className="row align-items-center mb-5">
-            <div className="col-12 col-md">
-              <h3 className="mb-0">{caseStudieshome.itemTitle}</h3>
-
-              <p className="mb-0 text-muted">{caseStudieshome.itemDescription}</p>
-            </div>
-            <div className="col-12 col-md-auto">
-              {/* <a
-                href="#!"
-                className="btn btn-sm btn-outline-gray-300 d-none d-md-inline"
-              >
-                {caseStudies.itemButton}
-              </a> */}
-            </div>
-          </div>
-
-          <Slider {...settings}>
-            {allWpCaseStudy.nodes.map((item) => (
-              <CaseStudyItem key={item.id} data={item} />
-            ))}
-          </Slider>
         </div>
       </section>
 
-      <RequestDemo demoForm={demoFormhome} />
-       <PricingSection pricing={pricingHome} />
+      <CaseStudySection />
 
-      <section className="pt-15 pb-12 bg-dark">
-        <div className="container pt-8 pt-md-11">
-          <div className="row">
-            {automationPointshome.map((item) => (
-              <div className="col-12 col-md-6">
-                <div className="d-flex">
-                  <div className="">
-                    <img src={item.icon.sourceUrl} alt={item.title} />
-                  </div>
+      <RequestDemo />
 
-                  <div className="ml-5">
-                    <h4 className="text-white">{item.title}</h4>
+      <PricingSection  />
 
-                    <p className="text-muted mb-6 mb-md-8">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <USPSection />
+
     </>
   );
 };

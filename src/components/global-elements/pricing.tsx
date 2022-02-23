@@ -1,7 +1,13 @@
 import { Link } from "gatsby";
 import React from "react";
+import { usePreFooterPricingQuery } from "../../graphql/usePreFooterPricingQuery";
 
-const PricingSection = ({ pricing }) => {
+const PricingSection = () => {
+
+  // global pricing elements
+  const {allWpGlobalElement: {nodes}} = usePreFooterPricingQuery();
+  const pricing = nodes[0].globalPricing.prefooterPricing;
+
   const { pricingCard } = pricing;
   const { priceCard2 } = pricing;
   return (
