@@ -311,3 +311,6 @@ Documentation Css
   font-size: 32px;
   font-weight: 500;
 }
+.svgwhiteInvert {
+  filter:  brightness(0) invert(1);
+}

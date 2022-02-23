@@ -7,6 +7,8 @@ import { useCaseStudiesQuery } from "../../graphql/useCaseStudiesQuery";
 import RequestDemo from "../home/request-demo";
 import PricingSection from "../home/pricing";
 import { Link } from "gatsby";
+import { usePreFooterPricingQuery } from "../../graphql/usePreFooterPricingQuery";
+import { usePreFooterUSPsQuery } from "../../graphql/usePreFooterUSPsQuery";
 
 const settings = {
   // dots: true,
@@ -24,14 +26,19 @@ const CompleteDetails = ({ crm }) => {
   const { features } = crm;
   const { caseStudies } = crm;
   const { demoForm } = crm;
-  const { pricing } = crm;
-  const { automationPoints } = crm;
-  console.log(caseStudies, "features testing");
-  console.log(features);
+  // const { pricing } = crm;
+  // const { automationPoints } = crm;
+
+  // global pricing elements
+  const {allWpGlobalElement: {nodes}} = usePreFooterPricingQuery();
+  const pricing = nodes[0].globalPricing.prefooterPricing;
+  // global usps elements
+  const {allWpGlobalElement} = usePreFooterUSPsQuery();
+  const automationPoints = allWpGlobalElement.nodes[0].globalUsps.stepsData;
 
   return (
-    <section className="crmdetails pt-8 pb-8 pt-md-3">
-      <div className="features">
+    <section className="crmdetails pt-8 pb-0 pt-md-3">
+      <div className="features pb-10">
         {features?.map((item, index) => (
           <div
             className="row align-items-center justify-content-between mt-10"
@@ -51,7 +58,7 @@ const CompleteDetails = ({ crm }) => {
                 <p className="font-size-md text-gray-700 mb-6">
                   {item.description}
                 </p>
-                {item.button && (
+                {item.button && item.buttonLink && (
                   <Link to={item.buttonLink.url}>
                     <button className="btn btn-outline-primary lift ml-2">
                       {item.button}
@@ -95,22 +102,44 @@ const CompleteDetails = ({ crm }) => {
       {demoForm?.title && <RequestDemo demoForm={demoForm} />}
       {pricing?.title && <PricingSection pricing={pricing} />}
 
+      {/* {automationPoints && (
+      <section id="reasons" className="pt-2 pb-9 pb-md-13">
+        <div className="container">
+          <div className="row">
+            {automationPoints.map((item) => (
+              <div className="col-12 col-md-4 mt-md-10">
+                <div className="row">
+                  <div className="col-auto col-md-12 mb-md-1">
+                    <img src={item.icon.sourceUrl} alt={item.title} width="50px" />
+                  </div>
+                  <div className="col col-md-12 ml-n5 ml-md-0">
+                    <h3>{item.title}</h3>
+          
+                    <p className="text-muted mb-6 mb-md-0">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      )} */}
       {automationPoints && (
         <section className="pt-15 pb-12 bg-dark">
-          <div className="container pt-8 pt-md-11">
+          <div className="container pt-8">
             <div className="row">
               {automationPoints?.map((item) => (
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-md-4 mt-md-8">
                   <div className="d-flex">
                     {item?.icon?.sourceUrl && (
                       <div className="">
-                        <img src={item.icon.sourceUrl} alt={item.title} />
+                        <img src={item.icon.sourceUrl} alt={item.title} className="svgwhiteInvert" />
                       </div>
                     )}
                     <div className="ml-5">
                       <h4 className="text-white">{item.title}</h4>
 
-                      <p className="text-muted mb-6 mb-md-8">
+                      <p className="text-muted mb-6 mb-md-0">
                         {item.description}
                       </p>
                     </div>
