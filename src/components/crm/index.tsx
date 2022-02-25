@@ -30,7 +30,7 @@ const CompleteDetails = ({ crm }) => {
 
   return (
     <section className="crmdetails pt-8 pb-0 pt-md-3">
-      <div className="features pb-0">
+      <div className="features container-fluid pb-0">
         {features?.map((item, index) => (
           <div
             className="row align-items-center justify-content-between mt-10"

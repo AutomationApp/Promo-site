@@ -190,19 +190,21 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
                 )}
               </div>
 
+            </div>
           </div>
-          </div>
-          <div className="row mt-10">
-            {landingSection?.points?.map((item, index) => (
-              <div className="col-12 col-lg-3 p-0" key={index}>
-                <div className="d-flex">
-                  <div className="badge badge-rounded-circle badge-dark-soft mt-1 mr-4">
-                    <i className="fe fe-check"></i>
+          <div className="container-fluid">
+            <div className="row mt-10">
+              {landingSection?.points?.map((item, index) => (
+                <div className="col-12 col-lg-3 p-0" key={index}>
+                  <div className="d-flex">
+                    <div className="badge badge-rounded-circle badge-dark-soft mt-1 mr-4">
+                      <i className="fe fe-check"></i>
+                    </div>
+                    <p className="text-dark p-0">{item?.description}</p>
                   </div>
-                  <p className="text-dark p-0">{item?.description}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
