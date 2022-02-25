@@ -46,7 +46,7 @@ const CompleteDetails = ({ crm }) => {
                   index % 2 === 0 ? "ml-md-auto" : "mr-md-auto"
                 }`}
               >
-                <h2 className="featureShaddow" dangerouslySetInnerHTML={{ __html: item?.heading }} />
+                <h2 dangerouslySetInnerHTML={{ __html: item?.heading }} />
                 <p className="font-size-md text-gray-700 mb-6">
                   {item.description}
                 </p>

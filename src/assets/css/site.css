@@ -314,6 +314,3 @@ Documentation Css
 .svgwhiteInvert {
   filter:  brightness(0) invert(1);
 }
-.featureShaddow {
-  text-shadow: 2px 5px 5px silver;
-}
