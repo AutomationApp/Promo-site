@@ -30,7 +30,7 @@ const CompleteDetails = ({ crm }) => {
 
   return (
     <section className="crmdetails pt-8 pb-0 pt-md-3">
-      <div className="features container-fluid pb-0">
+      <div className="features container pb-0">
         {features?.map((item, index) => (
           <div
             className="row align-items-center justify-content-between mt-10"
@@ -42,7 +42,8 @@ const CompleteDetails = ({ crm }) => {
               }`}
             >
               <div
-                className={`w-75 mx-sm-auto mx-md-0 w-md-75 ${
+                // className={`w-75 mx-sm-auto mx-md-0 w-md-75 ${
+                className={`mx-sm-auto mx-md-0 ${
                   index % 2 === 0 ? "ml-md-auto" : "mr-md-auto"
                 }`}
               >
@@ -64,7 +65,10 @@ const CompleteDetails = ({ crm }) => {
                 <img
                   src={item?.image?.sourceUrl}
                   alt="Automate"
-                  className="img-fluid mb-4 rounded"
+                  // className="img-fluid mb-4 rounded"
+                  className={`img-fluid mb-4 rounded ${
+                    index % 2 === 0 ? "mw-lg-140" : "mw-lg-130 ml-lg-n12"
+                  }`}
                 />
               </div>
             )}
