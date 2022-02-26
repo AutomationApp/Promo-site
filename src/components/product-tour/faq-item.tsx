@@ -13,22 +13,24 @@ const FaqItem = ({ faqs, changeImageSource }) => {
   console.log(faqs, "I am faqs");
   return (
     <>
-      <Accordion preExpanded={["helpOne"]}>
-        {faqs.faq.map((item) => (
-          <>
-            <AccordionItem
-              key={item.id}
-              uuid={item.areaControl}
-              onClick={() => changeImageSource(item.id)}
-            >
-              <AccordionItemHeading>
-                <AccordionItemButton>{item.heading}</AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel>{item.content}</AccordionItemPanel>
-            </AccordionItem>
-          </>
-        ))}
-      </Accordion>
+      <div className="card shadow-light-lg accordion">
+        <Accordion preExpanded={["helpOne"]}>
+          {faqs.faq.map((item) => (
+            <>
+              <AccordionItem
+                key={item.id}
+                uuid={item.areaControl}
+                onClick={() => changeImageSource(item.id)}
+              >
+                <AccordionItemHeading>
+                  <AccordionItemButton>{item.heading}</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>{item.content}</AccordionItemPanel>
+              </AccordionItem>
+            </>
+          ))}
+        </Accordion>
+      </div>
       <Link to={faqs.buttonDestinationUrl} className="text-decoration-none">
         <button className="navbar-btn btn btn-block mt-3 btn-primary lift">
           {faqs.button}
