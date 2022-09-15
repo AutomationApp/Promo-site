@@ -29,7 +29,7 @@ const BlogSection = ({ data }) => {
                 }}
               />
 
-              <p
+              <div
                 className="lead mb-7 text-center text-muted"
                 dangerouslySetInnerHTML={{
                   __html: wpPost.excerpt,
@@ -111,7 +111,7 @@ const BlogSection = ({ data }) => {
                 </figcaption> */}
               </figure>
 
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: wpPost.content,
                 }}
