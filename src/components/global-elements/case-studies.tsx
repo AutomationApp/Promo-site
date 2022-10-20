@@ -23,7 +23,7 @@ const settings = {
 const CaseStudySection = () => {
     // global case studies
     const {allWpGlobalElement} = usePreFooterCaseStudeiesQuery();
-    const caseStudies = allWpGlobalElement.nodes[0].globalCaseStudies.prefooterCasestudies;
+    const caseStudies = allWpGlobalElement.nodes[0]?.globalCaseStudies.prefooterCasestudies;
 
     return (
         <section className="pt-8 pb-8">
