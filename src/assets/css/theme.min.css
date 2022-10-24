@@ -12949,9 +12949,9 @@ a.text-white:hover {
 .text-body {
   color: #161c2d !important;
 }
-/*.text-muted {
+.text-muted {
   color: #869ab8 !important;
-}*/
+}
 .text-black-50 {
   color: rgba(22, 28, 45, 0.5) !important;
 }
