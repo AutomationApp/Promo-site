@@ -48,14 +48,12 @@ const CompleteDetails = ({ crm }) => {
                 }`}
               >
                 <h2 dangerouslySetInnerHTML={{ __html: item?.heading }} />
-                <p>
-                  <div
-                    className="font-size-md text-gray-700 mb-6"
-                    dangerouslySetInnerHTML={{
-                      __html: item?.description,
-                    }}
-                  />
-                </p>
+                <div
+                  className="font-size-md text-gray-700 mb-6"
+                  dangerouslySetInnerHTML={{
+                    __html: item?.description,
+                  }}
+                />
                 {item.button && item.buttonLink && (
                   <Link to={item.buttonLink.url}>
                     <button className="btn btn-outline-primary lift ml-2">

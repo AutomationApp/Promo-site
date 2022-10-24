@@ -41,7 +41,7 @@ const BlogItem = ({ blog }) => {
               }}
             />
 
-            <p
+            <div
               className="mb-0 text-muted"
               dangerouslySetInnerHTML={{
                 __html: blog.excerpt,
