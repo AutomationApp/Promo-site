@@ -168,7 +168,7 @@ const NavCRM = ({ navLinks, landingSection, bgColor }) => {
                   dangerouslySetInnerHTML={{ __html: landingSection?.title }}
               />
               <p
-                className="lead text-muted mb-0"
+                className="lead mb-0"
                 dangerouslySetInnerHTML={{ __html: landingSection?.subtitle }}
               />
               <div className="text-center text-md-left pt-5">
