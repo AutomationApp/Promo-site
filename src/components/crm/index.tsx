@@ -48,7 +48,7 @@ const CompleteDetails = ({ crm }) => {
                 }`}
               >
                 <h2 dangerouslySetInnerHTML={{ __html: item?.heading }} />
-                <p 
+                <div
                   className="font-size-md text-gray-700 mb-6"
                   dangerouslySetInnerHTML={{
                     __html: item?.description,
