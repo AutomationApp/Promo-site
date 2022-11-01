@@ -114,16 +114,6 @@ const BlogsSection = ({ allWpPost }) => {
                     onChange={(e) => setSearchValue(e.target.value)}
                   />
 
-                  <div className="input-group-append">
-                    <span className="input-group-text border-0 py-0 pl-1 pr-3">
-                      <a
-                        className="btn btn-sm btn-primary"
-                        href="blog-search.html"
-                      >
-                        Search
-                      </a>
-                    </span>
-                  </div>
                 </div>
               </form>
 
