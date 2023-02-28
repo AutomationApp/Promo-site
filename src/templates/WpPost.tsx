@@ -8,7 +8,8 @@ import Layout from "../components/common/layout/layout";
 
 const BlogSection = ({ data }) => {
   const { wpPost } = data;
-  console.log(wpPost);
+  // incase of missing featured image, use default image url
+  const defaultFeaturedImageUrl = "https://wordpress-638795-2187391.cloudwaysapps.com/wp-content/uploads/2021/10/SWmRLlP75HEeNbXGD5Zf7tpDxMqoN3DXZmupqwMk-1.jpg";
 
   return (
     <Layout>
@@ -16,7 +17,7 @@ const BlogSection = ({ data }) => {
         title={wpPost.seo.title}
         description={wpPost.seo.metaDesc}
         pageUrl={wpPost.seo.canonical}
-        imageUrl={wpPost.featuredImage ? wpPost.featuredImage.node.sourceUrl : ""}
+        imageUrl={wpPost.featuredImage ? wpPost.featuredImage.node.sourceUrl : defaultFeaturedImageUrl}
       />
 
       <section className="py-7 py-md-9 border-bottom border-gray-300" id="info">
@@ -103,7 +104,7 @@ const BlogSection = ({ data }) => {
               <figure className="figure mb-7">
                 <img
                   className="figure-img img-fluid rounded lift lift-lg w-100"
-                  src={wpPost.featuredImage ? wpPost.featuredImage.node.sourceUrl : ""}
+                  src={wpPost.featuredImage ? wpPost.featuredImage.node.sourceUrl : defaultFeaturedImageUrl}
                   alt={wpPost.title}
                 />
 

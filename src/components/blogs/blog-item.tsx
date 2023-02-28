@@ -3,6 +3,8 @@ import moment from "moment";
 import { Link } from "gatsby";
 
 const BlogItem = ({ blog }) => {
+  // incase of missing featured image, use default image url
+  const defaultFeaturedImageUrl = "https://wordpress-638795-2187391.cloudwaysapps.com/wp-content/uploads/2021/10/SWmRLlP75HEeNbXGD5Zf7tpDxMqoN3DXZmupqwMk-1.jpg";
   return (
     <div className="col-12 col-md-6 col-lg-4 d-flex mt-5">
       <Link
@@ -12,7 +14,7 @@ const BlogItem = ({ blog }) => {
       >
         <div className="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
           <img
-            src={blog.featuredImage ? blog.featuredImage.node.sourceUrl : ""}
+            src={blog.featuredImage ? blog.featuredImage.node.sourceUrl : defaultFeaturedImageUrl}
             alt={blog.title}
             className="card-img-top "
           />
