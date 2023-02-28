@@ -103,7 +103,7 @@ const BlogSection = ({ data }) => {
               <figure className="figure mb-7">
                 <img
                   className="figure-img img-fluid rounded lift lift-lg w-100"
-                  src={wpPost.featuredImage.node.sourceUrl}
+                  src={wpPost.featuredImage ? wpPost.featuredImage.node.sourceUrl : ""}
                   alt={wpPost.title}
                 />
 
