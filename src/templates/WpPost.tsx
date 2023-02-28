@@ -16,7 +16,7 @@ const BlogSection = ({ data }) => {
         title={wpPost.seo.title}
         description={wpPost.seo.metaDesc}
         pageUrl={wpPost.seo.canonical}
-        imageUrl={wpPost.featuredImage.node ? wpPost.featuredImage.node.sourceUrl : ""}
+        imageUrl={wpPost.featuredImage ? wpPost.featuredImage.node.sourceUrl : ""}
       />
 
       <section className="py-7 py-md-9 border-bottom border-gray-300" id="info">
